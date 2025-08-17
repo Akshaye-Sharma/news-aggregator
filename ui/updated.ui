@@ -1,0 +1,2352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>891</width>
+    <height>528</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="news_page">
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_6">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <property name="leftMargin">
+               <number>12</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>12</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="name_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Guest</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="latest_news_header">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>latest news</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="signIn_button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Sign in</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_2">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="searchBar">
+                <property name="placeholderText">
+                 <string>Search...</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_7">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QScrollArea" name="scrollArea">
+                <property name="minimumSize">
+                 <size>
+                  <width>281</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Sunken</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>281</width>
+                   <height>1688</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout">
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_15">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_34">
+                     <item>
+                      <widget class="QLabel" name="label_73">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_74">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_75">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_76">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_77">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                       <property name="openExternalLinks">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_16">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_35">
+                     <item>
+                      <widget class="QLabel" name="label_78">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_79">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_80">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_81">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_82">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_2">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_25">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_44">
+                     <item>
+                      <widget class="QLabel" name="label_123">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_124">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_125">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_126">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_127">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_3">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_26">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_45">
+                     <item>
+                      <widget class="QLabel" name="label_128">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_129">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_130">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_131">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_132">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_4">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_27">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_46">
+                     <item>
+                      <widget class="QLabel" name="label_133">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_134">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_135">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_136">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_137">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_5">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+              <item>
+               <widget class="QScrollArea" name="scrollArea_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>281</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Sunken</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_6">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>281</width>
+                   <height>1688</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_28">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_47">
+                     <item>
+                      <widget class="QLabel" name="label_138">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_139">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_140">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_141">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_142">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_6">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_29">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_48">
+                     <item>
+                      <widget class="QLabel" name="label_143">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_144">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_145">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_146">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_147">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_7">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_30">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_49">
+                     <item>
+                      <widget class="QLabel" name="label_148">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_149">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_150">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_151">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_152">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_8">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_31">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_50">
+                     <item>
+                      <widget class="QLabel" name="label_153">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_154">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_155">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_156">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_157">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_9">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_32">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_51">
+                     <item>
+                      <widget class="QLabel" name="label_158">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_159">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_160">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_161">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_162">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_10">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+              <item>
+               <widget class="QScrollArea" name="scrollArea_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>281</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Sunken</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_7">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>281</width>
+                   <height>1688</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_33">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_52">
+                     <item>
+                      <widget class="QLabel" name="label_163">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_164">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_165">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_166">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_167">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_11">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_34">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_53">
+                     <item>
+                      <widget class="QLabel" name="label_168">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_169">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_170">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_171">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_172">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_12">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_35">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_54">
+                     <item>
+                      <widget class="QLabel" name="label_173">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_174">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_175">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_176">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_177">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_13">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_36">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_55">
+                     <item>
+                      <widget class="QLabel" name="label_178">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_179">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_180">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_181">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_182">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_14">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_37">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_56">
+                     <item>
+                      <widget class="QLabel" name="label_183">
+                       <property name="font">
+                        <font>
+                         <pointsize>19</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>After BLS firing, Trump leave clean-up job to successor - Politico</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_184">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Sam Sutton, Nick Niedzwiadek</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_185">
+                       <property name="font">
+                        <font>
+                         <pointsize>13</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>2025-08-03T09:01:00:Z</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_186">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The statistical agency's problem predate Trump, but experts say it can't be easily fixed without more resources.</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_187">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>The agency has spent decades building up firewalls from political interference to preserver the publics confidence in its economic reports. But it also faces massive challenges caused in part by years... [+6992 chars]</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="link_label_15">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Read more</string>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_8">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="results_label">
+                <property name="text">
+                 <string>Results:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="refresh_button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Refresh</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="registration_page">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QFrame" name="frame_11">
+          <property name="minimumSize">
+           <size>
+            <width>811</width>
+            <height>480</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>811</width>
+            <height>480</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QLabel" name="create_account_message">
+           <property name="geometry">
+            <rect>
+             <x>70</x>
+             <y>420</y>
+             <width>241</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Account creation error message</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="create_account_submit">
+           <property name="geometry">
+            <rect>
+             <x>296</x>
+             <y>370</y>
+             <width>81</width>
+             <height>32</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Submit</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_34">
+           <property name="geometry">
+            <rect>
+             <x>430</x>
+             <y>250</y>
+             <width>151</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Password: </string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_36">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>50</y>
+             <width>151</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Create account</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_37">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>100</y>
+             <width>71</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>First name:</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="first_name_entry">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>120</y>
+             <width>161</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_38">
+           <property name="geometry">
+            <rect>
+             <x>430</x>
+             <y>150</y>
+             <width>151</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Sign in</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_39">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>305</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Country:</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="signIn_submit">
+           <property name="geometry">
+            <rect>
+             <x>706</x>
+             <y>290</y>
+             <width>81</width>
+             <height>32</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Submit</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="last_name_entry">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>120</y>
+             <width>161</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_40">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>250</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Phone number: </string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="phone_code_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>18</x>
+             <y>265</y>
+             <width>151</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="currentText">
+            <string>United States (+1)</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>United States (+1)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>United Kingdom (+44)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>India (+91)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>China (+86)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Germany (+48)</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLabel" name="label_41">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>150</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Email:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_42">
+           <property name="geometry">
+            <rect>
+             <x>430</x>
+             <y>210</y>
+             <width>151</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Email:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="signIn_message">
+           <property name="geometry">
+            <rect>
+             <x>480</x>
+             <y>340</y>
+             <width>241</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Sign in error message</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="skip_button">
+           <property name="geometry">
+            <rect>
+             <x>706</x>
+             <y>430</y>
+             <width>81</width>
+             <height>32</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Skip</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_44">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>100</y>
+             <width>71</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Last name:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_45">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>200</y>
+             <width>151</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Password: </string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="country_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>18</x>
+             <y>325</y>
+             <width>356</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="currentText">
+            <string>United States</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>United States</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>United Kingdom</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>India</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>China</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Germany</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLineEdit" name="create_email_entry">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>170</y>
+             <width>351</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="create_password_entry">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>220</y>
+             <width>351</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="phone_number_entry">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>273</y>
+             <width>191</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label">
+           <property name="geometry">
+            <rect>
+             <x>380</x>
+             <y>20</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../icons/user.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="signIn_email">
+           <property name="geometry">
+            <rect>
+             <x>510</x>
+             <y>210</y>
+             <width>271</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="signIn_email_2">
+           <property name="geometry">
+            <rect>
+             <x>510</x>
+             <y>250</y>
+             <width>271</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
