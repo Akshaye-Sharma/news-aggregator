@@ -1,5 +1,7 @@
 import requests
 from datetime import datetime as dt
+import re
+from html import unescape
 
 # Retrieve and filter articles via API
 class Api_request:
@@ -28,11 +30,26 @@ class Api_request:
                 ]): # If data is missing
                     article["author"] = article.get("author") or "Unknown author"
                     article["publishedAt"] = article.get("publishedAt") or "Unknown date"
+                    
+                    article["title"] = self.clean_text(article["title"])
+                    article["description"] = self.clean_text(article["description"])
+                    article["content"] = self.clean_text(article["content"])
                     self.articles.append(article)
         else:
             print("Error:", self.response.status_code)
 
         self.convert_time()
+
+    def clean_text(self, text: str) -> str:
+        if not text:
+            return ""
+        text = unescape(text)
+        # Remove HTML tags like <ul><li>...</li></ul>
+        text = re.sub(r"<[^>]+>", "", text)
+        # Replace escaped newlines \r\n with spaces
+        text = text.replace("\r", " ").replace("\n", " ")
+        # Strip extra whitespace
+        return text.strip()
 
     # Format time displayed on articles
     def convert_time(self):
