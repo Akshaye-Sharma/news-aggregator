@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>891</width>
+    <width>911</width>
     <height>528</height>
    </rect>
   </property>
@@ -25,6 +25,133 @@
       </property>
       <widget class="QWidget" name="news_page">
        <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QFrame" name="frame_5">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="news_icon">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>../icons/speaker.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="name_label">
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Guest</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="latest_news_header">
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>28</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>latest news</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_12">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="signIn_button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Sign in</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
         <item>
          <widget class="QFrame" name="frame">
           <property name="frameShape">
@@ -46,75 +173,6 @@
            <property name="bottomMargin">
             <number>0</number>
            </property>
-           <item>
-            <widget class="QFrame" name="frame_6">
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <property name="leftMargin">
-               <number>12</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>12</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="name_label">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Guest</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="latest_news_header">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>28</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>latest news</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-                <property name="wordWrap">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="signIn_button">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Sign in</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
            <item>
             <widget class="QFrame" name="frame_2">
              <property name="frameShape">
@@ -156,7 +214,33 @@
                <number>0</number>
               </property>
               <item>
-               <widget class="QPushButton" name="pushButton_5">
+               <widget class="QPushButton" name="topUS_button">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Top US</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="WSJ_button">
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Wall Street Journal</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="apple_button">
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
@@ -172,7 +256,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_6">
+               <widget class="QPushButton" name="tesla_button">
                 <property name="maximumSize">
                  <size>
                   <width>100</width>
@@ -184,37 +268,11 @@
                 </property>
                </widget>
               </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_4">
-                <property name="maximumSize">
-                 <size>
-                  <width>100</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Top US</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_7">
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Wall Street Journal</string>
-                </property>
-               </widget>
-              </item>
              </layout>
             </widget>
            </item>
            <item>
-            <widget class="QFrame" name="frame_7">
+            <widget class="QFrame" name="frame_4">
              <property name="frameShape">
               <enum>QFrame::NoFrame</enum>
              </property>
@@ -222,9 +280,6 @@
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
-              <property name="spacing">
-               <number>0</number>
-              </property>
               <property name="leftMargin">
                <number>0</number>
               </property>
@@ -260,7 +315,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>281</width>
-                   <height>1688</height>
+                   <height>1618</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout">
@@ -273,6 +328,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_34">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_73">
                        <property name="font">
@@ -380,6 +447,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_35">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_78">
                        <property name="font">
@@ -484,6 +563,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_44">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_123">
                        <property name="font">
@@ -588,6 +679,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_45">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_128">
                        <property name="font">
@@ -692,6 +795,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_46">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_133">
                        <property name="font">
@@ -814,7 +929,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>281</width>
-                   <height>1688</height>
+                   <height>1618</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -827,6 +942,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_47">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_138">
                        <property name="font">
@@ -931,6 +1058,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_48">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_143">
                        <property name="font">
@@ -1035,6 +1174,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_49">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_148">
                        <property name="font">
@@ -1139,6 +1290,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_50">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_153">
                        <property name="font">
@@ -1243,6 +1406,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_51">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_158">
                        <property name="font">
@@ -1365,7 +1540,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>281</width>
-                   <height>1688</height>
+                   <height>1618</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -1378,6 +1553,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_52">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_163">
                        <property name="font">
@@ -1482,6 +1669,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_53">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_168">
                        <property name="font">
@@ -1586,6 +1785,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_54">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_173">
                        <property name="font">
@@ -1690,6 +1901,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_55">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_178">
                        <property name="font">
@@ -1794,6 +2017,18 @@
                      </size>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_56">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="label_183">
                        <property name="font">

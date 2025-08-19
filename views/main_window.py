@@ -10,36 +10,75 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.createButtons()
 
-        self.create_request()
+        # API request constants
+        self.API_KEY = os.getenv("API_KEY")
+        self.BASE = "https://newsapi.org/v2/everything"
+
+        self.currentTopic = None
+        self.articleIndex = 0
+        self.load_articles("Top US")
+    
+    def load_articles(self, topic: str):
+        # Generalized loader for all topics
+        self.currentTopic = topic
+
+        self.topUS_button.setEnabled(True)
+        self.WSJ_button.setEnabled(True)
+        self.apple_button.setEnabled(True)
+        self.tesla_button.setEnabled(True)
+
+        if topic == "Tesla":
+            params = {"q": "tesla", "apiKey": self.API_KEY}
+            url = self.BASE
+            self.tesla_button.setEnabled(False)
+        elif topic == "Apple":
+            params = {
+                "q": "apple",
+                "from": "2025-08-18",
+                "to": "2025-08-18",
+                "sortBy": "popularity",
+                "apiKey": self.API_KEY
+            }
+            url = self.BASE
+            self.apple_button.setEnabled(False)
+
+        elif topic == "Wall Street Journal":
+            params = {"domains": "wsj.com", "apiKey": self.API_KEY}
+            url = self.BASE
+            self.WSJ_button.setEnabled(False)
+
+        elif topic == "Top US":
+            params = {"country": "us", "category": "business", "apiKey": self.API_KEY}
+            url = "https://newsapi.org/v2/top-headlines"
+            self.topUS_button.setEnabled(False)
+        else:
+            raise ValueError(f"Unknown topic: {topic}")
+        
+        request = Api_request(self.API_KEY, url, params)
+        self.articles = request.articles
+        self.results = request.results
+        
+        if len(self.articles) < 15:
+            self.articleIndex = 0
+        else:
+            self.articleIndex = r.randint(0, len(self.articles) - 15)
+
         self.showArticles()
         self.readMoreLink()
 
-    def create_request(self):
-        API_KEY = os.getenv("API_KEY")
-        URL = "https://newsapi.org/v2/top-headlines"  
-        URL2 = "https://newsapi.org/v2/everything"
-        params = {
-            "country": "us",
-            "category": "business",
-            "apiKey": API_KEY
-        }
-        params2 = {
-            "q": "tesla",
-            "apiKey": API_KEY
-        }
-        request = Api_request(API_KEY, URL2, params2)
-        self.articles = request.articles
-        self.results = request.results
-        self.articleIndex = r.randint(0, len(self.articles)-15)
-
     def refresh(self):
-        self.create_request()
-        self.showArticles() 
-        self.readMoreLink()
+        if self.currentTopic:
+            self.load_articles(self.currentTopic)
 
     def createButtons(self):
-        self.signIn_button.clicked.connect(self.showSignInPage)
+        self.signIn_button.clicked.connect(self.showSignInPage) 
         self.skip_button.clicked.connect(self.showNewsPage)
+
+        self.topUS_button.clicked.connect(lambda: self.load_articles("Top US"))
+        self.WSJ_button.clicked.connect(lambda: self.load_articles("Wall Street Journal"))
+        self.apple_button.clicked.connect(lambda: self.load_articles("Apple"))
+        self.tesla_button.clicked.connect(lambda: self.load_articles("Tesla"))
+
         self.refresh_button.clicked.connect(self.refresh)
 
     def showSignInPage(self):
@@ -110,36 +149,40 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.label_160.setText(_translate("MainWindow", self.articles[self.articleIndex+9]["publishedAt"]))
         self.label_161.setText(_translate("MainWindow", self.articles[self.articleIndex+9]["description"]))
         self.label_162.setText(_translate("MainWindow", self.articles[self.articleIndex+9]["content"]))
+        if (len(self.articles)) > 10:
+            self.label_163.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["title"]))
+            self.label_164.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["author"]))
+            self.label_165.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["publishedAt"]))
+            self.label_166.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["description"]))
+            self.label_167.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["content"]))
 
-        self.label_163.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["title"]))
-        self.label_164.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["author"]))
-        self.label_165.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["publishedAt"]))
-        self.label_166.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["description"]))
-        self.label_167.setText(_translate("MainWindow", self.articles[self.articleIndex+10]["content"]))
+        if (len(self.articles)) > 11:
+            self.label_168.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["title"]))
+            self.label_169.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["author"]))
+            self.label_170.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["publishedAt"]))
+            self.label_171.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["description"]))
+            self.label_172.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["content"]))
 
-        self.label_168.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["title"]))
-        self.label_169.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["author"]))
-        self.label_170.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["publishedAt"]))
-        self.label_171.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["description"]))
-        self.label_172.setText(_translate("MainWindow", self.articles[self.articleIndex+11]["content"]))
+        if (len(self.articles)) > 12:
+            self.label_173.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["title"]))
+            self.label_174.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["author"]))
+            self.label_175.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["publishedAt"]))
+            self.label_176.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["description"]))
+            self.label_177.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["content"]))
 
-        self.label_173.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["title"]))
-        self.label_174.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["author"]))
-        self.label_175.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["publishedAt"]))
-        self.label_176.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["description"]))
-        self.label_177.setText(_translate("MainWindow", self.articles[self.articleIndex+12]["content"]))
+        if (len(self.articles)) > 13:
+            self.label_178.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["title"]))
+            self.label_179.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["author"]))
+            self.label_180.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["publishedAt"]))
+            self.label_181.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["description"]))
+            self.label_182.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["content"]))
 
-        self.label_178.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["title"]))
-        self.label_179.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["author"]))
-        self.label_180.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["publishedAt"]))
-        self.label_181.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["description"]))
-        self.label_182.setText(_translate("MainWindow", self.articles[self.articleIndex+13]["content"]))
-
-        self.label_183.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["title"]))
-        self.label_184.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["author"]))
-        self.label_185.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["publishedAt"]))
-        self.label_186.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["description"]))
-        self.label_187.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["content"]))
+        if (len(self.articles)) > 14:
+            self.label_183.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["title"]))
+            self.label_184.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["author"]))
+            self.label_185.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["publishedAt"]))
+            self.label_186.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["description"]))
+            self.label_187.setText(_translate("MainWindow", self.articles[self.articleIndex+14]["content"]))
         self.results_label.setText("Results: " + str(self.results))
 
     def readMoreLink(self):
@@ -163,14 +206,18 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.link_label_9.setOpenExternalLinks(True)
         self.link_label_10.setText(f'<a href="{self.articles[self.articleIndex+9]['url']}">Read more')
         self.link_label_10.setOpenExternalLinks(True)
-        self.link_label_11.setText(f'<a href="{self.articles[self.articleIndex+10]['url']}">Read more')
-        self.link_label_11.setOpenExternalLinks(True)
-        self.link_label_12.setText(f'<a href="{self.articles[self.articleIndex+11]['url']}">Read more')
-        self.link_label_12.setOpenExternalLinks(True)
-        self.link_label_13.setText(f'<a href="{self.articles[self.articleIndex+12]['url']}">Read more')
-        self.link_label_13.setOpenExternalLinks(True)
-        self.link_label_14.setText(f'<a href="{self.articles[self.articleIndex+13]['url']}">Read more')
-        self.link_label_14.setOpenExternalLinks(True)
-        self.link_label_15.setText(f'<a href="{self.articles[self.articleIndex+14]['url']}">Read more')
-        self.link_label_15.setOpenExternalLinks(True)
-
+        if (len(self.articles)) > 10:
+            self.link_label_11.setText(f'<a href="{self.articles[self.articleIndex+10]['url']}">Read more')
+            self.link_label_11.setOpenExternalLinks(True)
+        if (len(self.articles)) > 11:
+            self.link_label_12.setText(f'<a href="{self.articles[self.articleIndex+11]['url']}">Read more')
+            self.link_label_12.setOpenExternalLinks(True)
+        if (len(self.articles)) > 12:
+            self.link_label_13.setText(f'<a href="{self.articles[self.articleIndex+12]['url']}">Read more')
+            self.link_label_13.setOpenExternalLinks(True)
+        if (len(self.articles)) > 13:
+            self.link_label_14.setText(f'<a href="{self.articles[self.articleIndex+13]['url']}">Read more')
+            self.link_label_14.setOpenExternalLinks(True)
+        if (len(self.articles)) > 14:
+            self.link_label_15.setText(f'<a href="{self.articles[self.articleIndex+14]['url']}">Read more')
+            self.link_label_15.setOpenExternalLinks(True)
