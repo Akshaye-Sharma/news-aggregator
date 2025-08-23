@@ -2,7 +2,7 @@
 
 A desktop application built using `PyQt` that fetches and displays the latest news articles from [NewsAPI.org](newsapi.org).
 
-The app lets you browse headlines from different sources and topics such as **Top US News**, **Tesla**, **Apple**, **Wall Street Journal**
+The app lets you browse headlines from different sources and topics such as **Top US News**, **Tesla**, **Apple**, **Wall Street Journal**.
 
 # Features
 
@@ -46,6 +46,7 @@ python3 main.py
 ```bash
 ├── main.py               # Start the application
 ├── api_return.py
+├── api_params.py
 ├── views/
 │   └── main_window.py    # Window logic handler
 ├── ui/

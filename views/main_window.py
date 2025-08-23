@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ui.ui_mainwindow import Ui_MainWindow
-from api_return import Api_request
+from api_params import Api_params
 import os
 import random as r
 
@@ -9,6 +9,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.createButtons()
+        self.news_service = Api_params()
 
         # API request constants
         self.API_KEY = os.getenv("API_KEY")
@@ -22,53 +23,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Generalized loader for all topics
         self.currentTopic = topic
 
-        self.topUS_button.setEnabled(True)
-        self.WSJ_button.setEnabled(True)
-        self.apple_button.setEnabled(True)
-        self.tesla_button.setEnabled(True)
-
-        if topic == "Tesla":
-            params = {"q": "tesla", "apiKey": self.API_KEY}
-            url = self.BASE
-            self.tesla_button.setEnabled(False)
-        elif topic == "Apple":
-            params = {
-                "q": "apple",
-                "from": "2025-08-18",
-                "to": "2025-08-18",
-                "sortBy": "popularity",
-                "apiKey": self.API_KEY
-            }
-            url = self.BASE
-            self.apple_button.setEnabled(False)
-
-        elif topic == "Wall Street Journal":
-            params = {"domains": "wsj.com", "apiKey": self.API_KEY}
-            url = self.BASE
-            self.WSJ_button.setEnabled(False)
-
-        elif topic == "Top US":
-            params = {"country": "us", "category": "business", "apiKey": self.API_KEY}
-            url = "https://newsapi.org/v2/top-headlines"
-            self.topUS_button.setEnabled(False)
-        else:
-            raise ValueError(f"Unknown topic: {topic}")
-        
-        request = Api_request(self.API_KEY, url, params)
-        self.articles = request.articles
-        self.results = request.results
-        
-        if len(self.articles) < 15:
-            self.articleIndex = 0
-        else:
-            self.articleIndex = r.randint(0, len(self.articles) - 15)
-
+        self.articles, self.results, self.articleIndex = self.news_service.fetch_articles(topic)        
+        self.topUS_button.setEnabled(topic != "Top US")
+        self.WSJ_button.setEnabled(topic != "Wall Street Journal")
+        self.apple_button.setEnabled(topic != "Apple")
+        self.tesla_button.setEnabled(topic != "Tesla")
         self.showArticles()
         self.readMoreLink()
 
     def refresh(self):
-        if self.currentTopic:
-            self.load_articles(self.currentTopic)
+        self.load_articles(self.currentTopic)
 
     def createButtons(self):
         self.signIn_button.clicked.connect(self.showSignInPage) 

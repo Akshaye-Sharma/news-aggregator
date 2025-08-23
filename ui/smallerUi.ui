@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>911</width>
-    <height>528</height>
+    <width>967</width>
+    <height>562</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,6 +27,12 @@
        <layout class="QVBoxLayout" name="verticalLayout_10">
         <item>
          <widget class="QFrame" name="frame_5">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
           </property>
@@ -35,7 +41,7 @@
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_12">
            <property name="leftMargin">
-            <number>0</number>
+            <number>12</number>
            </property>
            <property name="topMargin">
             <number>0</number>
@@ -64,7 +70,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>../icons/speaker.png</pixmap>
+              <pixmap>../icons/news.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -80,7 +86,10 @@
               </size>
              </property>
              <property name="text">
-              <string>Guest</string>
+              <string/>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -314,7 +323,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>281</width>
+                   <width>300</width>
                    <height>1618</height>
                   </rect>
                  </property>
@@ -928,7 +937,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>281</width>
+                   <width>299</width>
                    <height>1618</height>
                   </rect>
                  </property>
@@ -1539,7 +1548,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>281</width>
+                   <width>300</width>
                    <height>1618</height>
                   </rect>
                  </property>
