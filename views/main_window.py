@@ -1,8 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ui.ui_mainwindow import Ui_MainWindow
 from api_params import Api_params
-import os
-import random as r
+from views.sign_in import SignInPage       
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -10,13 +9,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.createButtons()
         self.news_service = Api_params()
-
-        # API request constants
-        self.API_KEY = os.getenv("API_KEY")
-        self.BASE = "https://newsapi.org/v2/everything"
+        self.sign_in_page = SignInPage(self)
 
         self.currentTopic = None
-        self.articleIndex = 0
         self.load_articles("Top US")
     
     def load_articles(self, topic: str):
@@ -36,7 +31,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def createButtons(self):
         self.signIn_button.clicked.connect(self.showSignInPage) 
-        self.skip_button.clicked.connect(self.showNewsPage)
+        self.news_page_button.clicked.connect(self.showNewsPage)
 
         self.topUS_button.clicked.connect(lambda: self.load_articles("Top US"))
         self.WSJ_button.clicked.connect(lambda: self.load_articles("Wall Street Journal"))
