@@ -1,11 +1,14 @@
-from api_return import Api_request
+from api.api_request import Api_request
 import os
 import random as r
+from config_manager import load_config
 
 # Sets up paramters for API request
 class Api_params:
     def __init__(self):
-        self.API_KEY = os.getenv("API_KEY")
+        # self.API_KEY = apiKey
+        config = load_config()
+        self.API_KEY = config.get("api_key", None)
         self.BASE = "https://newsapi.org/v2/everything"
         self.TOP_HEADLINES = "https://newsapi.org/v2/top-headlines"
 

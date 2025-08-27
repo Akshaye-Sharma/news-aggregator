@@ -1,19 +1,28 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ui.ui_mainwindow import Ui_MainWindow
-from api_params import Api_params
-from views.sign_in import SignInPage       
+from api.api_params import Api_params
+from views.sign_in import SignInPage
+from views.key_entry import KeyEntryPage
+from config_manager import load_config, is_first_run, save_config
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.createButtons()
-        self.news_service = Api_params()
         self.sign_in_page = SignInPage(self)
+        self.key_entry_page = KeyEntryPage(self)
 
-        self.currentTopic = None
-        self.load_articles("Top US")
-    
+        config = load_config()
+        if is_first_run(config) or not config.get("api_key"):
+            self.stackedWidget.setCurrentWidget(self.startUp_page)
+        else:
+            self.stackedWidget.setCurrentWidget(self.news_page) # Forgot this line
+            self.news_service = Api_params()
+            self.load_articles("Top US")
+        
+        # self.sign_in_page.showAPIKey()
+
     def load_articles(self, topic: str):
         # Generalized loader for all topics
         self.currentTopic = topic
