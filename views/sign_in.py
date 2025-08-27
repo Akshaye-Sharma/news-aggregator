@@ -125,7 +125,7 @@ class SignInPage:
         self.main_window.create_account_message.hide()
         self.main_window.signIn_message.hide()
     
-    # def showAPIKey(self):
-    #     config = load_config()
-    #     key = config.get("api_key", None)
-    #     self.main_window.key_label.setText("Api key:"+ key)
+        config = load_config()
+        key = config.get("api_key", None)
+        self.main_window.key_label.setText("Api key:"+ key)
+    

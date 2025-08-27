@@ -21,7 +21,7 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="startUp_page">
        <layout class="QHBoxLayout" name="horizontalLayout">
@@ -148,7 +148,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>../icons/key2.png</pixmap>
+            <pixmap>../icons/key.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -476,7 +476,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>283</width>
+                   <width>274</width>
                    <height>1608</height>
                   </rect>
                  </property>
@@ -1090,7 +1090,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>283</width>
+                   <width>274</width>
                    <height>1608</height>
                   </rect>
                  </property>
@@ -1701,7 +1701,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>283</width>
+                   <width>274</width>
                    <height>1608</height>
                   </rect>
                  </property>
