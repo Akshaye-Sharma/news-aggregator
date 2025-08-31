@@ -7,7 +7,7 @@ class SignInPage:
         self.main_window = main_window
         self.buttons()
 
-    def account_creation(self):
+    def account_creation(self):        
         self.first_name = self.main_window.first_name_entry.text()
         self.last_name = self.main_window.last_name_entry.text()
         self.email = self.main_window.create_email_entry.text()
@@ -107,9 +107,14 @@ class SignInPage:
         stored_hash = data[1].encode('utf-8')
         if bcrypt.checkpw(self.signIn_password.encode('utf-8'), stored_hash):
             self.main_window.signIn_message.setText("Login Successful!")
-            self.main_window.name_label.setText(data[2])
             self.main_window.signIn_submit.setEnabled(False)
-            self.main_window.signIn_button.setEnabled(False)
+            cursor.execute("SELECT id, first_name FROM users WHERE email = ?", (self.signIn_email,))
+            user = cursor.fetchone()
+            if user:
+                user_id = user[0]
+            self.main_window.signedIn = True
+            self.main_window.name_label = data[2]
+            self.main_window.user_id = user_id
         else:
             self.main_window.signIn_message.setText("Login Failed")
 
@@ -128,4 +133,5 @@ class SignInPage:
         config = load_config()
         key = config.get("api_key", None)
         self.main_window.key_label.setText("Api key:"+ key)
-    
+        tab = self.main_window.currentTab
+        self.main_window.news_page_button.clicked.connect(self.main_window.showNewsPage)
