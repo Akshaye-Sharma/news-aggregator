@@ -54,7 +54,7 @@ class SignInPage:
             self.main_window.create_account_message.setText("Password must not contain your name")
             self.main_window.create_account_message.show()
             return            
-        if not self.phone.isdigit() or 11 < len(self.phone) < 6:
+        if not self.phone.isdigit() or 11 < len(self.phone) or len(self.phone) < 6:
             self.main_window.create_account_message.setText("Please enter a valid phone number")
             self.main_window.create_account_message.show()
             return
@@ -93,34 +93,33 @@ class SignInPage:
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
 
-        self.signIn_email = self.main_window.signIn_email.text()
-        self.signIn_password = self.main_window.signIn_password.text()
-        
-        cursor.execute("SELECT email, password, first_name FROM users WHERE email = ?", (self.signIn_email,))
-        data = cursor.fetchone()
-        
-        if data is None:
+        email = self.main_window.signIn_email.text().strip().lower()
+        password = self.main_window.signIn_password.text()
+
+        cursor.execute("SELECT id, email, password, first_name FROM users WHERE email = ?", (email,))
+        user = cursor.fetchone()
+
+        if not user:
             self.main_window.signIn_message.setText("Login Failed")
             self.main_window.signIn_message.show()
+            conn.close()
             return
 
-        stored_hash = data[1].encode('utf-8')
-        if bcrypt.checkpw(self.signIn_password.encode('utf-8'), stored_hash):
+        user_id, _, stored_hash, first_name = user
+        stored_hash = stored_hash.encode('utf-8')
+
+        if bcrypt.checkpw(password.encode('utf-8'), stored_hash):
             self.main_window.signIn_message.setText("Login Successful!")
             self.main_window.signIn_submit.setEnabled(False)
-            cursor.execute("SELECT id, first_name FROM users WHERE email = ?", (self.signIn_email,))
-            user = cursor.fetchone()
-            if user:
-                user_id = user[0]
             self.main_window.signedIn = True
-            self.main_window.name_label = data[2]
             self.main_window.user_id = user_id
+            self.main_window.name_label.setText(first_name)
         else:
             self.main_window.signIn_message.setText("Login Failed")
 
         self.main_window.signIn_message.show()
-        conn.commit()
         conn.close()
+
 
     def buttons(self):
         self.main_window.create_account_submit.clicked.connect(self.account_creation)

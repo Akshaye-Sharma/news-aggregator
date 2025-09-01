@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
-    <height>561</height>
+    <width>956</width>
+    <height>584</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -555,8 +555,8 @@
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>264</width>
-                       <height>1700</height>
+                       <width>304</width>
+                       <height>1625</height>
                       </rect>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout">
@@ -1504,8 +1504,8 @@
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>263</width>
-                       <height>1700</height>
+                       <width>304</width>
+                       <height>1625</height>
                       </rect>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -2453,8 +2453,8 @@
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>264</width>
-                       <height>1700</height>
+                       <width>304</width>
+                       <height>1625</height>
                       </rect>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -3421,8 +3421,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>516</width>
-                    <height>930</height>
+                    <width>932</width>
+                    <height>780</height>
                    </rect>
                   </property>
                   <layout class="QGridLayout" name="gridLayout">
@@ -4586,7 +4586,7 @@
                   <enum>Qt::LeftToRight</enum>
                  </property>
                  <property name="text">
-                  <string>You have no saved articles</string>
+                  <string>You have 0/6 saved articles.</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>

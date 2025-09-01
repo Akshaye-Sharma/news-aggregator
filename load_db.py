@@ -24,7 +24,7 @@ def init_db():
         publishedAt TEXT,
         description TEXT,
         content TEXT,
-        link TEXT
+        link TEXT UNIQUE
     )
     """)
 
@@ -51,8 +51,7 @@ def save_article(user_id, article):
     """, (article["title"], article.get("author"), article.get("publishedAt"),
           article.get("description"), article.get("content"), article.get("url")))
 
-    cursor.execute("SELECT id FROM articles WHERE title = ? AND publishedAt = ?",
-                   (article["title"], article.get("publishedAt")))
+    cursor.execute("SELECT id FROM articles WHERE link = ?", (article.get("url"),))
     article_id = cursor.fetchone()[0]
 
     cursor.execute("""
@@ -83,9 +82,7 @@ def remove_saved_article(user_id, article):
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
 
-    # Find the article id first
-    cursor.execute("SELECT id FROM articles WHERE title = ? AND publishedAt = ?", 
-                   (article["title"], article.get("publishedAt")))
+    cursor.execute("SELECT id FROM articles WHERE link = ?", (article.get("url"),))
     result = cursor.fetchone()
 
     if result:
@@ -105,9 +102,10 @@ def is_article_saved(user_id, article):
     cursor.execute("""
     SELECT a.id FROM articles a
     JOIN user_saved_articles usa ON a.id = usa.article_id
-    WHERE usa.user_id = ? AND a.title = ? AND a.publishedAt = ?
-    """, (user_id, article["title"], article.get("publishedAt")))
+    WHERE usa.user_id = ? AND a.link = ?
+    """, (user_id, article.get("url")))
 
     result = cursor.fetchone()
     conn.close()
     return result is not None
+
