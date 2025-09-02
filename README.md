@@ -7,7 +7,9 @@ The app lets you browse headlines from different sources and topics such as **To
 ## Features
 
 * Browse news articles based on categories/topics.
+* Search for custom keywords to fetch articles on any topic of interest.
 * Refresh articles to get the latest information.
+* Save and unsave up to 6 articles per account for quick access later.
 * Clean `PyQt5` interface designed with `Qt designer`.
 * Links to source websites for full articles.
 
