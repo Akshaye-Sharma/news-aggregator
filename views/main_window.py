@@ -6,6 +6,7 @@ from views.key_entry import KeyEntryPage
 from config_manager import load_config, is_first_run
 from load_db import save_article, get_saved_articles, remove_saved_article, is_article_saved
 from functools import partial
+import random as r
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     MAX_NEWS_ARTICLES = 15
@@ -36,6 +37,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.showNewsPage()
 
     def createButtons(self):
+        self.searchBar.returnPressed.connect(self.performSearch)
         self.signIn_button.clicked.connect(self.showSignInPage)
         self.topUS_button.clicked.connect(lambda: self.load_articles("Top US"))
         self.WSJ_button.clicked.connect(lambda: self.load_articles("Wall Street Journal"))
@@ -83,6 +85,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def refresh(self):
         if self.currentTab != "Saved":
             self.load_articles(self.currentTab)
+        
+        r.shuffle(self.articles)
+        self.populate_articles()
+        self.status_label.setText("Refreshed")
+        QtCore.QTimer.singleShot(3000, lambda: self.status_label.setText(""))
 
     def populate_articles(self):
         _translate = QtCore.QCoreApplication.translate
@@ -115,22 +122,39 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             else:
                 if box: box.hide()
 
-        self.results_label.setText(f"Results: {self.results}")
+        def format_results(n: int) -> str:
+            if n >= 1_000_000:
+                return f"{n/1_000_000:.1f}M"
+            elif n >= 1_000:
+                return f"{n/1_000:.1f}K"
+            else:
+                return str(n)
+
+        self.results_label.setText(f"Results: {format_results(self.results)}")
 
     def toggle_save(self, index: int):
-        if not self.signedIn:
-            return
-
         # Buttons 0..14 => news list (MAX_NEWS_ARTICLES = 15)
         if index < self.MAX_NEWS_ARTICLES and index < len(self.articles) and self.currentTab != "Saved":
             article = self.articles[index]
             button = self.save_buttons[index]
+            if not self.signedIn:
+                self.status_label.setText("Sign in to save articles")
+                QtCore.QTimer.singleShot(3000, lambda: self.status_label.setText(""))
+                button.setChecked(False)
+                return
             if is_article_saved(self.user_id, article):
                 remove_saved_article(self.user_id, article)   # expects dict with "url"
                 button.setChecked(False)
             else:
-                save_article(self.user_id, article)           # expects dict with "url"
-                button.setChecked(True)
+                saved_count = len(get_saved_articles(self.user_id))
+                if saved_count >= 6:
+                    self.status_label.setText("You have reached the limit of 6 articles saved.")
+                    QtCore.QTimer.singleShot(3000, lambda: self.status_label.setText(""))
+                    button.setChecked(False)
+                else:
+                    print("Happened")
+                    save_article(self.user_id, article)           # expects dict with "url"
+                    button.setChecked(True)
 
             # If the Saved page is open in another tab later, keep it fresh next time:
             # (Optional) self.saved_articles = get_saved_articles(self.user_id)
@@ -170,13 +194,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         if not self.signedIn:
             self.articleWidget.setCurrentWidget(self.text_page)
-            self.no_saves_label.setText("Sign up to save articles here!")
+            self.text_label.setText("Sign up to save articles here!")
             return
 
         self.saved_articles = get_saved_articles(self.user_id)
         if not self.saved_articles:
             self.articleWidget.setCurrentWidget(self.text_page)
-            self.no_saves_label.setText("You have no saved articles")
+            self.text_label.setText("You have 0/6 saved articles.")
             return
 
         self.articleWidget.setCurrentWidget(self.savedArticles_page)
@@ -207,3 +231,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 if save_button: save_button.setChecked(True)
             else:
                 if box: box.hide()
+
+    def performSearch(self):
+        keyword = self.searchBar.text().strip()
+        if not keyword:
+            self.load_articles(self.currentTab)
+            return
+        if not self.news_service:
+            self.news_service = Api_params()
+        self.currentTab = keyword
+        self.articleWidget.setCurrentWidget(self.articles_page)
+        self.saved_button.setEnabled(True)
+        self.topUS_button.setEnabled(True)
+        self.WSJ_button.setEnabled(True)
+        self.apple_button.setEnabled(True)
+        self.tesla_button.setEnabled(True)
+
+        try:    
+            self.articles, self.results, _ = self.news_service.fetch_articles(keyword)
+        except Exception as e:
+            # handle errors
+            print("Search failed:", e)
+            self.articles, self.results = [], 0
+        
+        if len(self.articles) == 0:
+            self.articleWidget.setCurrentWidget(self.text_page)
+            self.text_label.setText("No articles found")
+
+        # repopulate the UI from the returned articles
+        self.populate_articles()

@@ -32,7 +32,13 @@ class Api_params:
             params = {"country": "us", "category": "business", "apiKey": self.API_KEY}
             url = "https://newsapi.org/v2/top-headlines"
         else:
-            raise ValueError(f"Unknown topic: {topic}")
+            params = {
+                "q": topic,
+                "apiKey": self.API_KEY,
+            }
+            url = self.BASE
+        # else:
+        #     raise ValueError(f"Unknown topic: {topic}")
         
         request = Api_request(self.API_KEY, url, params)
         self.articles = request.articles

@@ -9,20 +9,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>956</width>
-    <height>584</height>
+    <width>975</width>
+    <height>693</height>
    </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
     <property name="leftMargin">
      <number>12</number>
     </property>
     <property name="topMargin">
-     <number>5</number>
+     <number>10</number>
     </property>
     <property name="rightMargin">
      <number>12</number>
@@ -221,7 +224,7 @@
             <number>0</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>5</number>
            </property>
            <property name="rightMargin">
             <number>0</number>
@@ -368,34 +371,41 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QFrame" name="frame_2">
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+            <widget class="QLineEdit" name="searchBar">
+             <property name="font">
+              <font>
+               <stylestrategy>PreferDefault</stylestrategy>
+              </font>
              </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_5">
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QLineEdit" name="searchBar">
-                <property name="placeholderText">
-                 <string>Search...</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
+             <property name="acceptDrops">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 1px solid #ccc;        /* Light border */
+    border-radius: 10px;           /* Rounded corners */
+    padding: 2px 5px;             /* Space inside */
+    background-color: #f9f9f9;     /* Subtle background */
+    selection-background-color: #cce7ff; /* Highlight when selecting text */
+	outline: none;
+}
+
+QLineEdit:focus {
+    border: 1px solid #0078d7;     /* Highlighted border when focused */
+	background-color: #ffffff;     /* White background when active */
+	outline: none;
+}
+</string>
+             </property>
+             <property name="placeholderText">
+              <string>Search...</string>
+             </property>
             </widget>
            </item>
            <item>
@@ -555,8 +565,8 @@
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>304</width>
-                       <height>1625</height>
+                       <width>310</width>
+                       <height>1615</height>
                       </rect>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout">
@@ -1504,8 +1514,8 @@
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>304</width>
-                       <height>1625</height>
+                       <width>311</width>
+                       <height>1615</height>
                       </rect>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -2453,8 +2463,8 @@
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>304</width>
-                       <height>1625</height>
+                       <width>310</width>
+                       <height>1615</height>
                       </rect>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -3421,7 +3431,7 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>932</width>
+                    <width>951</width>
                     <height>780</height>
                    </rect>
                   </property>
@@ -4581,7 +4591,7 @@
              <widget class="QWidget" name="text_page">
               <layout class="QVBoxLayout" name="verticalLayout_3">
                <item>
-                <widget class="QLabel" name="no_saves_label">
+                <widget class="QLabel" name="text_label">
                  <property name="layoutDirection">
                   <enum>Qt::LeftToRight</enum>
                  </property>
@@ -4620,10 +4630,64 @@
               </property>
               <item>
                <widget class="QLabel" name="results_label">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
                 <property name="text">
                  <string>Results:</string>
                 </property>
                </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="status_label">
+                <property name="minimumSize">
+                 <size>
+                  <width>500</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
               <item>
                <widget class="QPushButton" name="refresh_button">
