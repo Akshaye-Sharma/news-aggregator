@@ -1,4 +1,3 @@
-from config_manager import load_config
 import sqlite3
 import bcrypt
 
@@ -111,6 +110,8 @@ class SignInPage:
         if bcrypt.checkpw(password.encode('utf-8'), stored_hash):
             self.main_window.signIn_message.setText("Login Successful!")
             self.main_window.signIn_submit.setEnabled(False)
+            self.main_window.signIn_button.setEnabled(False)
+            self.main_window.profile_button.setEnabled(True)
             self.main_window.signedIn = True
             self.main_window.user_id = user_id
             self.main_window.name_label.setText(first_name)
@@ -129,8 +130,5 @@ class SignInPage:
         self.main_window.create_account_message.hide()
         self.main_window.signIn_message.hide()
     
-        config = load_config()
-        key = config.get("api_key", None)
-        self.main_window.key_label.setText("Api key:"+ key)
-        tab = self.main_window.currentTab
+
         self.main_window.news_page_button.clicked.connect(self.main_window.showNewsPage)

@@ -1,8 +1,9 @@
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 from ui.ui_mainwindow import Ui_MainWindow
 from api.api_params import Api_params
 from views.sign_in import SignInPage
 from views.key_entry import KeyEntryPage
+from views.profile import ProfilePage
 from config_manager import load_config, is_first_run
 from load_db import save_article, get_saved_articles, remove_saved_article, is_article_saved
 from functools import partial
@@ -21,6 +22,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.sign_in_page = SignInPage(self)
         self.key_entry_page = KeyEntryPage(self)
+        self.user_profile_page = ProfilePage(self)
+
         self.news_service = None
         self.articles = []
         self.saved_articles = []
@@ -39,6 +42,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def createButtons(self):
         self.searchBar.returnPressed.connect(self.performSearch)
         self.signIn_button.clicked.connect(self.showSignInPage)
+        self.profile_button.clicked.connect(self.showProfilePage)
         self.topUS_button.clicked.connect(lambda: self.load_articles("Top US"))
         self.WSJ_button.clicked.connect(lambda: self.load_articles("Wall Street Journal"))
         self.apple_button.clicked.connect(lambda: self.load_articles("Apple"))
@@ -65,6 +69,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             self.articleWidget.setCurrentWidget(self.articles_page)
             self.load_articles(self.currentTab)
+
+    def showProfilePage(self):
+        self.stackedWidget.setCurrentWidget(self.profile_page)
 
     def load_articles(self, topic):
         self.currentTab = topic

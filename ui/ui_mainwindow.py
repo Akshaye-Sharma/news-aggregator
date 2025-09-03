@@ -15,14 +15,21 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(975, 693)
+        MainWindow.resize(965, 685)
         MainWindow.setFocusPolicy(QtCore.Qt.NoFocus)
+        MainWindow.setStyleSheet("background-color: #f5f1e9;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.centralwidget)
-        self.horizontalLayout_7.setContentsMargins(12, 10, 12, 5)
-        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.frame_7 = QtWidgets.QFrame(self.centralwidget)
+        self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_7.setObjectName("frame_7")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_7)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.stackedWidget = QtWidgets.QStackedWidget(self.frame_7)
         self.stackedWidget.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.stackedWidget.setObjectName("stackedWidget")
         self.startUp_page = QtWidgets.QWidget()
@@ -31,43 +38,636 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame_6 = QtWidgets.QFrame(self.startUp_page)
-        self.frame_6.setMaximumSize(QtCore.QSize(341, 250))
-        self.frame_6.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.frame_6.setMinimumSize(QtCore.QSize(461, 341))
+        self.frame_6.setMaximumSize(QtCore.QSize(461, 341))
+        self.frame_6.setStyleSheet("")
+        self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
-        self.startup_message = QtWidgets.QLabel(self.frame_6)
-        self.startup_message.setGeometry(QtCore.QRect(0, 0, 341, 161))
-        self.startup_message.setAlignment(QtCore.Qt.AlignCenter)
-        self.startup_message.setObjectName("startup_message")
-        self.label_2 = QtWidgets.QLabel(self.frame_6)
-        self.label_2.setGeometry(QtCore.QRect(60, 110, 121, 31))
-        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_2.setObjectName("label_2")
-        self.newsAPI_link = QtWidgets.QLabel(self.frame_6)
-        self.newsAPI_link.setGeometry(QtCore.QRect(180, 111, 91, 31))
-        self.newsAPI_link.setAlignment(QtCore.Qt.AlignCenter)
-        self.newsAPI_link.setObjectName("newsAPI_link")
-        self.api_enter_button = QtWidgets.QPushButton(self.frame_6)
-        self.api_enter_button.setGeometry(QtCore.QRect(250, 205, 61, 31))
-        self.api_enter_button.setObjectName("api_enter_button")
-        self.key_entry_message = QtWidgets.QLabel(self.frame_6)
-        self.key_entry_message.setGeometry(QtCore.QRect(100, 210, 141, 20))
-        self.key_entry_message.setAlignment(QtCore.Qt.AlignCenter)
-        self.key_entry_message.setObjectName("key_entry_message")
+        self.profile_name_label_2 = QtWidgets.QLabel(self.frame_6)
+        self.profile_name_label_2.setGeometry(QtCore.QRect(50, 90, 371, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.profile_name_label_2.setFont(font)
+        self.profile_name_label_2.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.profile_name_label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.profile_name_label_2.setObjectName("profile_name_label_2")
+        self.label_45 = QtWidgets.QLabel(self.frame_6)
+        self.label_45.setGeometry(QtCore.QRect(110, 140, 101, 21))
+        font = QtGui.QFont()
+        self.label_45.setFont(font)
+        self.label_45.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_45.setObjectName("label_45")
         self.api_entry = QtWidgets.QLineEdit(self.frame_6)
-        self.api_entry.setGeometry(QtCore.QRect(40, 160, 261, 21))
+        self.api_entry.setGeometry(QtCore.QRect(60, 180, 350, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.api_entry.setFont(font)
         self.api_entry.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.api_entry.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
+        self.api_entry.setText("")
         self.api_entry.setAlignment(QtCore.Qt.AlignCenter)
         self.api_entry.setObjectName("api_entry")
+        self.key_entry_message = QtWidgets.QLabel(self.frame_6)
+        self.key_entry_message.setGeometry(QtCore.QRect(160, 250, 141, 21))
+        font = QtGui.QFont()
+        self.key_entry_message.setFont(font)
+        self.key_entry_message.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.key_entry_message.setAlignment(QtCore.Qt.AlignCenter)
+        self.key_entry_message.setObjectName("key_entry_message")
+        self.api_enter_button = QtWidgets.QPushButton(self.frame_6)
+        self.api_enter_button.setGeometry(QtCore.QRect(310, 280, 100, 25))
+        self.api_enter_button.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.api_enter_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
+        self.api_enter_button.setObjectName("api_enter_button")
         self.key_icon = QtWidgets.QLabel(self.frame_6)
-        self.key_icon.setGeometry(QtCore.QRect(155, 20, 30, 30))
+        self.key_icon.setGeometry(QtCore.QRect(210, 20, 41, 41))
         self.key_icon.setText("")
-        self.key_icon.setPixmap(QtGui.QPixmap("ui/../icons/key.png"))
+        self.key_icon.setPixmap(QtGui.QPixmap("ui/../icons/key-chain.png"))
         self.key_icon.setScaledContents(True)
         self.key_icon.setAlignment(QtCore.Qt.AlignCenter)
         self.key_icon.setObjectName("key_icon")
+        self.newsAPI_link = QtWidgets.QLabel(self.frame_6)
+        self.newsAPI_link.setGeometry(QtCore.QRect(230, 141, 101, 21))
+        font = QtGui.QFont()
+        self.newsAPI_link.setFont(font)
+        self.newsAPI_link.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.newsAPI_link.setObjectName("newsAPI_link")
         self.horizontalLayout.addWidget(self.frame_6)
         self.stackedWidget.addWidget(self.startUp_page)
+        self.profile_page = QtWidgets.QWidget()
+        self.profile_page.setObjectName("profile_page")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.profile_page)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.frame_2 = QtWidgets.QFrame(self.profile_page)
+        self.frame_2.setMinimumSize(QtCore.QSize(891, 611))
+        self.frame_2.setMaximumSize(QtCore.QSize(891, 611))
+        self.frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.label_5 = QtWidgets.QLabel(self.frame_2)
+        self.label_5.setGeometry(QtCore.QRect(40, 30, 61, 61))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("ui/../icons/user.png"))
+        self.label_5.setScaledContents(True)
+        self.label_5.setObjectName("label_5")
+        self.profile_name_label = QtWidgets.QLabel(self.frame_2)
+        self.profile_name_label.setGeometry(QtCore.QRect(120, 40, 181, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.profile_name_label.setFont(font)
+        self.profile_name_label.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;  \n"
+"     font-weight: bold;\n"
+"}")
+        self.profile_name_label.setObjectName("profile_name_label")
+        self.profile_email_label = QtWidgets.QLabel(self.frame_2)
+        self.profile_email_label.setGeometry(QtCore.QRect(120, 62, 181, 21))
+        self.profile_email_label.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.profile_email_label.setObjectName("profile_email_label")
+        self.label_44 = QtWidgets.QLabel(self.frame_2)
+        self.label_44.setGeometry(QtCore.QRect(40, 130, 71, 21))
+        font = QtGui.QFont()
+        self.label_44.setFont(font)
+        self.label_44.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_44.setObjectName("label_44")
+        self.profile_first_name = QtWidgets.QLineEdit(self.frame_2)
+        self.profile_first_name.setEnabled(False)
+        self.profile_first_name.setGeometry(QtCore.QRect(40, 150, 380, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_first_name.setFont(font)
+        self.profile_first_name.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_first_name.setText("")
+        self.profile_first_name.setObjectName("profile_first_name")
+        self.label_61 = QtWidgets.QLabel(self.frame_2)
+        self.label_61.setGeometry(QtCore.QRect(500, 130, 71, 21))
+        font = QtGui.QFont()
+        self.label_61.setFont(font)
+        self.label_61.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_61.setObjectName("label_61")
+        self.label_62 = QtWidgets.QLabel(self.frame_2)
+        self.label_62.setGeometry(QtCore.QRect(40, 220, 71, 21))
+        font = QtGui.QFont()
+        self.label_62.setFont(font)
+        self.label_62.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_62.setObjectName("label_62")
+        self.label_63 = QtWidgets.QLabel(self.frame_2)
+        self.label_63.setGeometry(QtCore.QRect(500, 310, 71, 21))
+        font = QtGui.QFont()
+        self.label_63.setFont(font)
+        self.label_63.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_63.setObjectName("label_63")
+        self.profile_country = QtWidgets.QComboBox(self.frame_2)
+        self.profile_country.setEnabled(False)
+        self.profile_country.setGeometry(QtCore.QRect(500, 330, 350, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.profile_country.sizePolicy().hasHeightForWidth())
+        self.profile_country.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.profile_country.setFont(font)
+        self.profile_country.setStyleSheet("QComboBox {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QComboBox::disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_country.setObjectName("profile_country")
+        self.profile_country.addItem("")
+        self.profile_country.addItem("")
+        self.profile_country.addItem("")
+        self.profile_country.addItem("")
+        self.profile_country.addItem("")
+        self.label_64 = QtWidgets.QLabel(self.frame_2)
+        self.label_64.setGeometry(QtCore.QRect(40, 310, 101, 21))
+        font = QtGui.QFont()
+        self.label_64.setFont(font)
+        self.label_64.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_64.setObjectName("label_64")
+        self.profile_phone_code = QtWidgets.QComboBox(self.frame_2)
+        self.profile_phone_code.setEnabled(False)
+        self.profile_phone_code.setGeometry(QtCore.QRect(40, 330, 181, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.profile_phone_code.sizePolicy().hasHeightForWidth())
+        self.profile_phone_code.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.profile_phone_code.setFont(font)
+        self.profile_phone_code.setStyleSheet("QComboBox {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 2px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"/* Hide the native drop-down arrow */\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    width: 30px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* Add custom arrow */\n"
+"QComboBox::down-arrow {\n"
+"    image: url(icons/down.png);  /* Make sure this is a valid relative path */\n"
+"    width: 10px;\n"
+"    height: 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* Optional: style the dropdown popup list */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    selection-background-color: #007BFF;\n"
+"    selection-color: white;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QComboBox::disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_phone_code.setObjectName("profile_phone_code")
+        self.profile_phone_code.addItem("")
+        self.profile_phone_code.addItem("")
+        self.profile_phone_code.addItem("")
+        self.profile_phone_code.addItem("")
+        self.profile_phone_code.addItem("")
+        self.profile_last_name = QtWidgets.QLineEdit(self.frame_2)
+        self.profile_last_name.setEnabled(False)
+        self.profile_last_name.setGeometry(QtCore.QRect(500, 150, 350, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_last_name.setFont(font)
+        self.profile_last_name.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_last_name.setText("")
+        self.profile_last_name.setObjectName("profile_last_name")
+        self.profile_email = QtWidgets.QLineEdit(self.frame_2)
+        self.profile_email.setEnabled(False)
+        self.profile_email.setGeometry(QtCore.QRect(40, 240, 380, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_email.setFont(font)
+        self.profile_email.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_email.setText("")
+        self.profile_email.setObjectName("profile_email")
+        self.profile_edit_button = QtWidgets.QPushButton(self.frame_2)
+        self.profile_edit_button.setGeometry(QtCore.QRect(770, 40, 89, 32))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.profile_edit_button.sizePolicy().hasHeightForWidth())
+        self.profile_edit_button.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_edit_button.setFont(font)
+        self.profile_edit_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.profile_edit_button.setStyleSheet("QPushButton {\n"
+"    background-color: #007BFF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    padding: 8px 16px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0056d2;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0041a8;\n"
+"}\n"
+"")
+        self.profile_edit_button.setObjectName("profile_edit_button")
+        self.profile_phone_number = QtWidgets.QLineEdit(self.frame_2)
+        self.profile_phone_number.setEnabled(False)
+        self.profile_phone_number.setGeometry(QtCore.QRect(239, 330, 181, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_phone_number.setFont(font)
+        self.profile_phone_number.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_phone_number.setObjectName("profile_phone_number")
+        self.profile_password = QtWidgets.QLineEdit(self.frame_2)
+        self.profile_password.setEnabled(False)
+        self.profile_password.setGeometry(QtCore.QRect(500, 240, 350, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_password.setFont(font)
+        self.profile_password.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_password.setText("")
+        self.profile_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.profile_password.setObjectName("profile_password")
+        self.label_65 = QtWidgets.QLabel(self.frame_2)
+        self.label_65.setGeometry(QtCore.QRect(500, 220, 71, 21))
+        font = QtGui.QFont()
+        self.label_65.setFont(font)
+        self.label_65.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_65.setObjectName("label_65")
+        self.profile_key_entry = QtWidgets.QLineEdit(self.frame_2)
+        self.profile_key_entry.setEnabled(False)
+        self.profile_key_entry.setGeometry(QtCore.QRect(500, 460, 350, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_key_entry.setFont(font)
+        self.profile_key_entry.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_key_entry.setText("")
+        self.profile_key_entry.setObjectName("profile_key_entry")
+        self.label_66 = QtWidgets.QLabel(self.frame_2)
+        self.label_66.setGeometry(QtCore.QRect(500, 440, 71, 21))
+        font = QtGui.QFont()
+        self.label_66.setFont(font)
+        self.label_66.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_66.setObjectName("label_66")
+        self.profile_name_label_8 = QtWidgets.QLabel(self.frame_2)
+        self.profile_name_label_8.setGeometry(QtCore.QRect(40, 390, 181, 21))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        font.setBold(True)
+        font.setWeight(75)
+        self.profile_name_label_8.setFont(font)
+        self.profile_name_label_8.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"      font-weight: bold;\n"
+"}")
+        self.profile_name_label_8.setObjectName("profile_name_label_8")
+        self.first_email_icon = QtWidgets.QLabel(self.frame_2)
+        self.first_email_icon.setGeometry(QtCore.QRect(45, 430, 35, 35))
+        self.first_email_icon.setText("")
+        self.first_email_icon.setPixmap(QtGui.QPixmap("ui/../icons/mail.png"))
+        self.first_email_icon.setScaledContents(True)
+        self.first_email_icon.setObjectName("first_email_icon")
+        self.first_email_name = QtWidgets.QLabel(self.frame_2)
+        self.first_email_name.setGeometry(QtCore.QRect(90, 430, 181, 21))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.first_email_name.setFont(font)
+        self.first_email_name.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"    font-weight: bold;\n"
+"}")
+        self.first_email_name.setObjectName("first_email_name")
+        self.second_email_icon = QtWidgets.QLabel(self.frame_2)
+        self.second_email_icon.setGeometry(QtCore.QRect(45, 490, 35, 35))
+        self.second_email_icon.setText("")
+        self.second_email_icon.setPixmap(QtGui.QPixmap("ui/../icons/mail.png"))
+        self.second_email_icon.setScaledContents(True)
+        self.second_email_icon.setObjectName("second_email_icon")
+        self.second_email_name = QtWidgets.QLabel(self.frame_2)
+        self.second_email_name.setGeometry(QtCore.QRect(90, 490, 181, 21))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.second_email_name.setFont(font)
+        self.second_email_name.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"    font-weight: bold;\n"
+"}")
+        self.second_email_name.setObjectName("second_email_name")
+        self.first_email_description = QtWidgets.QLabel(self.frame_2)
+        self.first_email_description.setGeometry(QtCore.QRect(90, 450, 71, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.first_email_description.setFont(font)
+        self.first_email_description.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.first_email_description.setObjectName("first_email_description")
+        self.second_email_description = QtWidgets.QLabel(self.frame_2)
+        self.second_email_description.setGeometry(QtCore.QRect(90, 510, 71, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.second_email_description.setFont(font)
+        self.second_email_description.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.second_email_description.setObjectName("second_email_description")
+        self.profile_add_email = QtWidgets.QPushButton(self.frame_2)
+        self.profile_add_email.setGeometry(QtCore.QRect(270, 550, 151, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.profile_add_email.sizePolicy().hasHeightForWidth())
+        self.profile_add_email.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_add_email.setFont(font)
+        self.profile_add_email.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.profile_add_email.setStyleSheet("QPushButton {\n"
+"    background-color: #79c3ed;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    padding: 8px 16px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #98ceed;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #98ceed; /* #8cc9ed*/\n"
+"}\n"
+"")
+        self.profile_add_email.setObjectName("profile_add_email")
+        self.delete_first_email = QtWidgets.QPushButton(self.frame_2)
+        self.delete_first_email.setGeometry(QtCore.QRect(390, 425, 25, 25))
+        self.delete_first_email.setMinimumSize(QtCore.QSize(25, 25))
+        self.delete_first_email.setMaximumSize(QtCore.QSize(25, 25))
+        self.delete_first_email.setAutoFillBackground(False)
+        self.delete_first_email.setStyleSheet("    border: none;\n"
+"    background: transparent;")
+        self.delete_first_email.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("ui/../icons/delete.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.delete_first_email.setIcon(icon)
+        self.delete_first_email.setIconSize(QtCore.QSize(25, 25))
+        self.delete_first_email.setCheckable(True)
+        self.delete_first_email.setObjectName("delete_first_email")
+        self.delete_second_email = QtWidgets.QPushButton(self.frame_2)
+        self.delete_second_email.setGeometry(QtCore.QRect(390, 490, 25, 25))
+        self.delete_second_email.setMinimumSize(QtCore.QSize(25, 25))
+        self.delete_second_email.setMaximumSize(QtCore.QSize(25, 25))
+        self.delete_second_email.setAutoFillBackground(False)
+        self.delete_second_email.setStyleSheet("    border: none;\n"
+"    background: transparent;")
+        self.delete_second_email.setText("")
+        self.delete_second_email.setIcon(icon)
+        self.delete_second_email.setIconSize(QtCore.QSize(25, 25))
+        self.delete_second_email.setCheckable(True)
+        self.delete_second_email.setObjectName("delete_second_email")
+        self.profile_news_button = QtWidgets.QPushButton(self.frame_2)
+        self.profile_news_button.setGeometry(QtCore.QRect(750, 560, 100, 25))
+        self.profile_news_button.setMaximumSize(QtCore.QSize(100, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.profile_news_button.setFont(font)
+        self.profile_news_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
+        self.profile_news_button.setObjectName("profile_news_button")
+        self.horizontalLayout_5.addWidget(self.frame_2)
+        self.stackedWidget.addWidget(self.profile_page)
         self.news_page = QtWidgets.QWidget()
         self.news_page.setObjectName("news_page")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.news_page)
@@ -111,12 +711,8 @@ class Ui_MainWindow(object):
         self.latest_news_header.setWordWrap(True)
         self.latest_news_header.setObjectName("latest_news_header")
         self.horizontalLayout_12.addWidget(self.latest_news_header)
-        self.saved_articles_label = QtWidgets.QLabel(self.frame_5)
-        self.saved_articles_label.setMaximumSize(QtCore.QSize(90, 16777215))
-        self.saved_articles_label.setText("")
-        self.saved_articles_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.saved_articles_label.setObjectName("saved_articles_label")
-        self.horizontalLayout_12.addWidget(self.saved_articles_label)
+        spacerItem1 = QtWidgets.QSpacerItem(70, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_12.addItem(spacerItem1)
         self.signIn_button = QtWidgets.QPushButton(self.frame_5)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -124,8 +720,41 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.signIn_button.sizePolicy().hasHeightForWidth())
         self.signIn_button.setSizePolicy(sizePolicy)
         self.signIn_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.signIn_button.setStyleSheet("QPushButton {\n"
+"    background-color: #fa4646;\n"
+"    color: white;              /* text color */\n"
+"    border: none;              /* removes the boxed border */\n"
+"    border-radius: 8px;        /* rounded corners */\n"
+"    padding: 6px 12px;         /* breathing room inside */\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #cf5044; /* darker when pressed */\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #cf7478;\n"
+"}")
         self.signIn_button.setObjectName("signIn_button")
         self.horizontalLayout_12.addWidget(self.signIn_button)
+        self.profile_button = QtWidgets.QPushButton(self.frame_5)
+        self.profile_button.setEnabled(False)
+        self.profile_button.setMinimumSize(QtCore.QSize(35, 35))
+        self.profile_button.setMaximumSize(QtCore.QSize(35, 35))
+        self.profile_button.setAutoFillBackground(False)
+        self.profile_button.setStyleSheet("    border: none;\n"
+"    background: transparent;")
+        self.profile_button.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("ui/../icons/profile.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("ui/../icons/user-2.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("ui/../icons/user-2.png"), QtGui.QIcon.Disabled, QtGui.QIcon.On)
+        self.profile_button.setIcon(icon1)
+        self.profile_button.setIconSize(QtCore.QSize(35, 64))
+        self.profile_button.setCheckable(True)
+        self.profile_button.setObjectName("profile_button")
+        self.horizontalLayout_12.addWidget(self.profile_button)
         self.verticalLayout_10.addWidget(self.frame_5)
         self.frame = QtWidgets.QFrame(self.news_page)
         self.frame.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -168,26 +797,117 @@ class Ui_MainWindow(object):
         self.topUS_button = QtWidgets.QPushButton(self.frame_3)
         self.topUS_button.setMaximumSize(QtCore.QSize(100, 16777215))
         self.topUS_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.topUS_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
         self.topUS_button.setObjectName("topUS_button")
         self.horizontalLayout_6.addWidget(self.topUS_button)
         self.WSJ_button = QtWidgets.QPushButton(self.frame_3)
         self.WSJ_button.setMaximumSize(QtCore.QSize(150, 16777215))
         self.WSJ_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.WSJ_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
         self.WSJ_button.setObjectName("WSJ_button")
         self.horizontalLayout_6.addWidget(self.WSJ_button)
         self.apple_button = QtWidgets.QPushButton(self.frame_3)
         self.apple_button.setEnabled(True)
         self.apple_button.setMaximumSize(QtCore.QSize(100, 16777215))
         self.apple_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.apple_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
         self.apple_button.setObjectName("apple_button")
         self.horizontalLayout_6.addWidget(self.apple_button)
         self.tesla_button = QtWidgets.QPushButton(self.frame_3)
         self.tesla_button.setMaximumSize(QtCore.QSize(100, 16777215))
         self.tesla_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.tesla_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
         self.tesla_button.setObjectName("tesla_button")
         self.horizontalLayout_6.addWidget(self.tesla_button)
         self.saved_button = QtWidgets.QPushButton(self.frame_3)
         self.saved_button.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.saved_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
         self.saved_button.setObjectName("saved_button")
         self.horizontalLayout_6.addWidget(self.saved_button)
         self.verticalLayout_8.addWidget(self.frame_3)
@@ -206,17 +926,33 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.scrollArea = QtWidgets.QScrollArea(self.frame_4)
+        self.scrollArea.setStyleSheet("QScrollBar:vertical, QScrollBar:horizontal {\n"
+"    width: 0px;\n"
+"    height: 0px;\n"
+"    background: transparent;\n"
+"}")
         self.scrollArea.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 310, 1615))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 298, 1594))
+        self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.articleBox_1 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.articleBox_1.setMinimumSize(QtCore.QSize(250, 250))
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.articleBox_1.setFont(font)
+        self.articleBox_1.setAutoFillBackground(False)
+        self.articleBox_1.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.articleBox_1.setCheckable(False)
         self.articleBox_1.setObjectName("articleBox_1")
         self.verticalLayout_34 = QtWidgets.QVBoxLayout(self.articleBox_1)
         self.verticalLayout_34.setContentsMargins(5, 5, 5, 5)
@@ -280,10 +1016,10 @@ class Ui_MainWindow(object):
         self.articleSave_button_1.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_1.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("ui/../icons/bookmark.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon.addPixmap(QtGui.QPixmap("ui/../icons/saved.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.articleSave_button_1.setIcon(icon)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("ui/../icons/bookmark.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("ui/../icons/saved.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.articleSave_button_1.setIcon(icon2)
         self.articleSave_button_1.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_1.setCheckable(True)
         self.articleSave_button_1.setObjectName("articleSave_button_1")
@@ -292,6 +1028,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.articleBox_1)
         self.articleBox_2 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.articleBox_2.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_2.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_2.setObjectName("articleBox_2")
         self.verticalLayout_35 = QtWidgets.QVBoxLayout(self.articleBox_2)
         self.verticalLayout_35.setContentsMargins(5, 5, 5, 5)
@@ -355,7 +1095,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_2.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_2.setText("")
-        self.articleSave_button_2.setIcon(icon)
+        self.articleSave_button_2.setIcon(icon2)
         self.articleSave_button_2.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_2.setCheckable(True)
         self.articleSave_button_2.setObjectName("articleSave_button_2")
@@ -364,6 +1104,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.articleBox_2)
         self.articleBox_3 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.articleBox_3.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_3.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_3.setObjectName("articleBox_3")
         self.verticalLayout_36 = QtWidgets.QVBoxLayout(self.articleBox_3)
         self.verticalLayout_36.setContentsMargins(5, 5, 5, 5)
@@ -427,7 +1171,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_3.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_3.setText("")
-        self.articleSave_button_3.setIcon(icon)
+        self.articleSave_button_3.setIcon(icon2)
         self.articleSave_button_3.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_3.setCheckable(True)
         self.articleSave_button_3.setObjectName("articleSave_button_3")
@@ -436,6 +1180,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.articleBox_3)
         self.articleBox_4 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.articleBox_4.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_4.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_4.setObjectName("articleBox_4")
         self.verticalLayout_37 = QtWidgets.QVBoxLayout(self.articleBox_4)
         self.verticalLayout_37.setContentsMargins(5, 5, 5, 5)
@@ -499,7 +1247,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_4.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_4.setText("")
-        self.articleSave_button_4.setIcon(icon)
+        self.articleSave_button_4.setIcon(icon2)
         self.articleSave_button_4.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_4.setCheckable(True)
         self.articleSave_button_4.setObjectName("articleSave_button_4")
@@ -508,6 +1256,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.articleBox_4)
         self.articleBox_5 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.articleBox_5.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_5.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_5.setObjectName("articleBox_5")
         self.verticalLayout_38 = QtWidgets.QVBoxLayout(self.articleBox_5)
         self.verticalLayout_38.setContentsMargins(5, 5, 5, 5)
@@ -571,7 +1323,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_5.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_5.setText("")
-        self.articleSave_button_5.setIcon(icon)
+        self.articleSave_button_5.setIcon(icon2)
         self.articleSave_button_5.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_5.setCheckable(True)
         self.articleSave_button_5.setObjectName("articleSave_button_5")
@@ -581,17 +1333,26 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.horizontalLayout_3.addWidget(self.scrollArea)
         self.scrollArea_2 = QtWidgets.QScrollArea(self.frame_4)
+        self.scrollArea_2.setStyleSheet("QScrollBar:vertical, QScrollBar:horizontal {\n"
+"    width: 0px;\n"
+"    height: 0px;\n"
+"    background: transparent;\n"
+"}")
         self.scrollArea_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 311, 1615))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 299, 1594))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.articleBox_6 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_2)
         self.articleBox_6.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_6.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_6.setObjectName("articleBox_6")
         self.verticalLayout_39 = QtWidgets.QVBoxLayout(self.articleBox_6)
         self.verticalLayout_39.setContentsMargins(5, 5, 5, 5)
@@ -655,7 +1416,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_6.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_6.setText("")
-        self.articleSave_button_6.setIcon(icon)
+        self.articleSave_button_6.setIcon(icon2)
         self.articleSave_button_6.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_6.setCheckable(True)
         self.articleSave_button_6.setObjectName("articleSave_button_6")
@@ -664,6 +1425,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.articleBox_6)
         self.articleBox_7 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_2)
         self.articleBox_7.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_7.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_7.setObjectName("articleBox_7")
         self.verticalLayout_40 = QtWidgets.QVBoxLayout(self.articleBox_7)
         self.verticalLayout_40.setContentsMargins(5, 5, 5, 5)
@@ -727,7 +1492,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_7.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_7.setText("")
-        self.articleSave_button_7.setIcon(icon)
+        self.articleSave_button_7.setIcon(icon2)
         self.articleSave_button_7.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_7.setCheckable(True)
         self.articleSave_button_7.setObjectName("articleSave_button_7")
@@ -736,6 +1501,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.articleBox_7)
         self.articleBox_8 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_2)
         self.articleBox_8.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_8.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_8.setObjectName("articleBox_8")
         self.verticalLayout_41 = QtWidgets.QVBoxLayout(self.articleBox_8)
         self.verticalLayout_41.setContentsMargins(5, 5, 5, 5)
@@ -799,7 +1568,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_8.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_8.setText("")
-        self.articleSave_button_8.setIcon(icon)
+        self.articleSave_button_8.setIcon(icon2)
         self.articleSave_button_8.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_8.setCheckable(True)
         self.articleSave_button_8.setObjectName("articleSave_button_8")
@@ -808,6 +1577,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.articleBox_8)
         self.articleBox_9 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_2)
         self.articleBox_9.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_9.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_9.setObjectName("articleBox_9")
         self.verticalLayout_42 = QtWidgets.QVBoxLayout(self.articleBox_9)
         self.verticalLayout_42.setContentsMargins(5, 5, 5, 5)
@@ -871,7 +1644,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_9.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_9.setText("")
-        self.articleSave_button_9.setIcon(icon)
+        self.articleSave_button_9.setIcon(icon2)
         self.articleSave_button_9.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_9.setCheckable(True)
         self.articleSave_button_9.setObjectName("articleSave_button_9")
@@ -880,6 +1653,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.articleBox_9)
         self.articleBox_10 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_2)
         self.articleBox_10.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_10.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_10.setObjectName("articleBox_10")
         self.verticalLayout_43 = QtWidgets.QVBoxLayout(self.articleBox_10)
         self.verticalLayout_43.setContentsMargins(5, 5, 5, 5)
@@ -943,7 +1720,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_10.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_10.setText("")
-        self.articleSave_button_10.setIcon(icon)
+        self.articleSave_button_10.setIcon(icon2)
         self.articleSave_button_10.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_10.setCheckable(True)
         self.articleSave_button_10.setObjectName("articleSave_button_10")
@@ -953,17 +1730,26 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.horizontalLayout_3.addWidget(self.scrollArea_2)
         self.scrollArea_3 = QtWidgets.QScrollArea(self.frame_4)
+        self.scrollArea_3.setStyleSheet("QScrollBar:vertical, QScrollBar:horizontal {\n"
+"    width: 0px;\n"
+"    height: 0px;\n"
+"    background: transparent;\n"
+"}")
         self.scrollArea_3.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollArea_3.setObjectName("scrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 310, 1615))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 298, 1594))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.articleBox_11 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_3)
         self.articleBox_11.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_11.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_11.setObjectName("articleBox_11")
         self.verticalLayout_44 = QtWidgets.QVBoxLayout(self.articleBox_11)
         self.verticalLayout_44.setContentsMargins(5, 5, 5, 5)
@@ -1027,7 +1813,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_11.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_11.setText("")
-        self.articleSave_button_11.setIcon(icon)
+        self.articleSave_button_11.setIcon(icon2)
         self.articleSave_button_11.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_11.setCheckable(True)
         self.articleSave_button_11.setObjectName("articleSave_button_11")
@@ -1036,6 +1822,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.articleBox_11)
         self.articleBox_12 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_3)
         self.articleBox_12.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_12.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_12.setObjectName("articleBox_12")
         self.verticalLayout_45 = QtWidgets.QVBoxLayout(self.articleBox_12)
         self.verticalLayout_45.setContentsMargins(5, 5, 5, 5)
@@ -1099,7 +1889,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_12.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_12.setText("")
-        self.articleSave_button_12.setIcon(icon)
+        self.articleSave_button_12.setIcon(icon2)
         self.articleSave_button_12.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_12.setCheckable(True)
         self.articleSave_button_12.setObjectName("articleSave_button_12")
@@ -1108,6 +1898,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.articleBox_12)
         self.articleBox_13 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_3)
         self.articleBox_13.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_13.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_13.setObjectName("articleBox_13")
         self.verticalLayout_46 = QtWidgets.QVBoxLayout(self.articleBox_13)
         self.verticalLayout_46.setContentsMargins(5, 5, 5, 5)
@@ -1171,7 +1965,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_13.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_13.setText("")
-        self.articleSave_button_13.setIcon(icon)
+        self.articleSave_button_13.setIcon(icon2)
         self.articleSave_button_13.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_13.setCheckable(True)
         self.articleSave_button_13.setObjectName("articleSave_button_13")
@@ -1180,6 +1974,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.articleBox_13)
         self.articleBox_14 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_3)
         self.articleBox_14.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_14.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_14.setObjectName("articleBox_14")
         self.verticalLayout_47 = QtWidgets.QVBoxLayout(self.articleBox_14)
         self.verticalLayout_47.setContentsMargins(5, 5, 5, 5)
@@ -1243,7 +2041,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_14.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_14.setText("")
-        self.articleSave_button_14.setIcon(icon)
+        self.articleSave_button_14.setIcon(icon2)
         self.articleSave_button_14.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_14.setCheckable(True)
         self.articleSave_button_14.setObjectName("articleSave_button_14")
@@ -1252,6 +2050,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.articleBox_14)
         self.articleBox_15 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_3)
         self.articleBox_15.setMinimumSize(QtCore.QSize(250, 250))
+        self.articleBox_15.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_15.setObjectName("articleBox_15")
         self.verticalLayout_48 = QtWidgets.QVBoxLayout(self.articleBox_15)
         self.verticalLayout_48.setContentsMargins(5, 5, 5, 5)
@@ -1315,7 +2117,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_15.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_15.setText("")
-        self.articleSave_button_15.setIcon(icon)
+        self.articleSave_button_15.setIcon(icon2)
         self.articleSave_button_15.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_15.setCheckable(True)
         self.articleSave_button_15.setObjectName("articleSave_button_15")
@@ -1332,11 +2134,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.scrollArea_4 = QtWidgets.QScrollArea(self.savedArticles_page)
+        self.scrollArea_4.setStyleSheet("QScrollBar:vertical, QScrollBar:horizontal {\n"
+"    width: 0px;\n"
+"    height: 0px;\n"
+"    background: transparent;\n"
+"}\n"
+"")
         self.scrollArea_4.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollArea_4.setObjectName("scrollArea_4")
         self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 951, 780))
+        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 915, 782))
         self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
         self.gridLayout = QtWidgets.QGridLayout(self.scrollAreaWidgetContents_4)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -1344,6 +2152,10 @@ class Ui_MainWindow(object):
         self.articleBox_16 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_4)
         self.articleBox_16.setMinimumSize(QtCore.QSize(250, 250))
         self.articleBox_16.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.articleBox_16.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_16.setObjectName("articleBox_16")
         self.verticalLayout_49 = QtWidgets.QVBoxLayout(self.articleBox_16)
         self.verticalLayout_49.setContentsMargins(5, 5, 5, 5)
@@ -1407,7 +2219,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_16.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_16.setText("")
-        self.articleSave_button_16.setIcon(icon)
+        self.articleSave_button_16.setIcon(icon2)
         self.articleSave_button_16.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_16.setCheckable(True)
         self.articleSave_button_16.setObjectName("articleSave_button_16")
@@ -1417,6 +2229,10 @@ class Ui_MainWindow(object):
         self.articleBox_17 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_4)
         self.articleBox_17.setMinimumSize(QtCore.QSize(250, 250))
         self.articleBox_17.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.articleBox_17.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_17.setObjectName("articleBox_17")
         self.verticalLayout_50 = QtWidgets.QVBoxLayout(self.articleBox_17)
         self.verticalLayout_50.setContentsMargins(5, 5, 5, 5)
@@ -1480,7 +2296,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_17.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_17.setText("")
-        self.articleSave_button_17.setIcon(icon)
+        self.articleSave_button_17.setIcon(icon2)
         self.articleSave_button_17.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_17.setCheckable(True)
         self.articleSave_button_17.setObjectName("articleSave_button_17")
@@ -1490,6 +2306,10 @@ class Ui_MainWindow(object):
         self.articleBox_18 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_4)
         self.articleBox_18.setMinimumSize(QtCore.QSize(250, 250))
         self.articleBox_18.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.articleBox_18.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_18.setObjectName("articleBox_18")
         self.verticalLayout_51 = QtWidgets.QVBoxLayout(self.articleBox_18)
         self.verticalLayout_51.setContentsMargins(5, 5, 5, 5)
@@ -1553,7 +2373,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_18.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_18.setText("")
-        self.articleSave_button_18.setIcon(icon)
+        self.articleSave_button_18.setIcon(icon2)
         self.articleSave_button_18.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_18.setCheckable(True)
         self.articleSave_button_18.setObjectName("articleSave_button_18")
@@ -1563,6 +2383,10 @@ class Ui_MainWindow(object):
         self.articleBox_19 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_4)
         self.articleBox_19.setMinimumSize(QtCore.QSize(250, 250))
         self.articleBox_19.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.articleBox_19.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_19.setObjectName("articleBox_19")
         self.verticalLayout_52 = QtWidgets.QVBoxLayout(self.articleBox_19)
         self.verticalLayout_52.setContentsMargins(5, 5, 5, 5)
@@ -1626,7 +2450,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_19.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_19.setText("")
-        self.articleSave_button_19.setIcon(icon)
+        self.articleSave_button_19.setIcon(icon2)
         self.articleSave_button_19.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_19.setCheckable(True)
         self.articleSave_button_19.setObjectName("articleSave_button_19")
@@ -1636,6 +2460,10 @@ class Ui_MainWindow(object):
         self.articleBox_20 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_4)
         self.articleBox_20.setMinimumSize(QtCore.QSize(250, 250))
         self.articleBox_20.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.articleBox_20.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_20.setObjectName("articleBox_20")
         self.verticalLayout_53 = QtWidgets.QVBoxLayout(self.articleBox_20)
         self.verticalLayout_53.setContentsMargins(5, 5, 5, 5)
@@ -1699,7 +2527,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_20.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_20.setText("")
-        self.articleSave_button_20.setIcon(icon)
+        self.articleSave_button_20.setIcon(icon2)
         self.articleSave_button_20.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_20.setCheckable(True)
         self.articleSave_button_20.setObjectName("articleSave_button_20")
@@ -1709,6 +2537,10 @@ class Ui_MainWindow(object):
         self.articleBox_21 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_4)
         self.articleBox_21.setMinimumSize(QtCore.QSize(250, 250))
         self.articleBox_21.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.articleBox_21.setStyleSheet("QGroupBox {\n"
+"    border: none;\n"
+"}\n"
+"")
         self.articleBox_21.setObjectName("articleBox_21")
         self.verticalLayout_54 = QtWidgets.QVBoxLayout(self.articleBox_21)
         self.verticalLayout_54.setContentsMargins(5, 5, 5, 5)
@@ -1772,7 +2604,7 @@ class Ui_MainWindow(object):
         self.articleSave_button_21.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.articleSave_button_21.setText("")
-        self.articleSave_button_21.setIcon(icon)
+        self.articleSave_button_21.setIcon(icon2)
         self.articleSave_button_21.setIconSize(QtCore.QSize(25, 25))
         self.articleSave_button_21.setCheckable(True)
         self.articleSave_button_21.setObjectName("articleSave_button_21")
@@ -1805,16 +2637,16 @@ class Ui_MainWindow(object):
         self.results_label.setMaximumSize(QtCore.QSize(100, 16777215))
         self.results_label.setObjectName("results_label")
         self.horizontalLayout_2.addWidget(self.results_label)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem1)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem2)
         self.status_label = QtWidgets.QLabel(self.frame_8)
         self.status_label.setMinimumSize(QtCore.QSize(500, 0))
         self.status_label.setText("")
         self.status_label.setAlignment(QtCore.Qt.AlignCenter)
         self.status_label.setObjectName("status_label")
         self.horizontalLayout_2.addWidget(self.status_label)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem2)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem3)
         self.refresh_button = QtWidgets.QPushButton(self.frame_8)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -1822,6 +2654,24 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.refresh_button.sizePolicy().hasHeightForWidth())
         self.refresh_button.setSizePolicy(sizePolicy)
         self.refresh_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.refresh_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 5px 10px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
         self.refresh_button.setObjectName("refresh_button")
         self.horizontalLayout_2.addWidget(self.refresh_button)
         self.verticalLayout_8.addWidget(self.frame_8)
@@ -1832,75 +2682,102 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.registration_page)
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.frame_11 = QtWidgets.QFrame(self.registration_page)
-        self.frame_11.setMinimumSize(QtCore.QSize(811, 480))
-        self.frame_11.setMaximumSize(QtCore.QSize(811, 480))
-        self.frame_11.setObjectName("frame_11")
-        self.create_account_message = QtWidgets.QLabel(self.frame_11)
-        self.create_account_message.setGeometry(QtCore.QRect(70, 400, 241, 61))
-        self.create_account_message.setAlignment(QtCore.Qt.AlignCenter)
-        self.create_account_message.setWordWrap(True)
-        self.create_account_message.setObjectName("create_account_message")
-        self.create_account_submit = QtWidgets.QPushButton(self.frame_11)
-        self.create_account_submit.setGeometry(QtCore.QRect(296, 370, 81, 32))
-        self.create_account_submit.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.create_account_submit.setObjectName("create_account_submit")
-        self.label_34 = QtWidgets.QLabel(self.frame_11)
-        self.label_34.setGeometry(QtCore.QRect(430, 250, 151, 21))
+        self.frame_9 = QtWidgets.QFrame(self.registration_page)
+        self.frame_9.setMinimumSize(QtCore.QSize(891, 611))
+        self.frame_9.setMaximumSize(QtCore.QSize(891, 611))
+        self.frame_9.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_9.setObjectName("frame_9")
+        self.label_54 = QtWidgets.QLabel(self.frame_9)
+        self.label_54.setGeometry(QtCore.QRect(40, 70, 71, 21))
         font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_34.setFont(font)
-        self.label_34.setObjectName("label_34")
-        self.label_36 = QtWidgets.QLabel(self.frame_11)
-        self.label_36.setGeometry(QtCore.QRect(20, 50, 151, 51))
+        self.label_54.setFont(font)
+        self.label_54.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_54.setObjectName("label_54")
+        self.first_name_entry = QtWidgets.QLineEdit(self.frame_9)
+        self.first_name_entry.setGeometry(QtCore.QRect(40, 90, 201, 31))
         font = QtGui.QFont()
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_36.setFont(font)
-        self.label_36.setObjectName("label_36")
-        self.label_37 = QtWidgets.QLabel(self.frame_11)
-        self.label_37.setGeometry(QtCore.QRect(20, 100, 71, 21))
-        font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_37.setFont(font)
-        self.label_37.setObjectName("label_37")
-        self.first_name_entry = QtWidgets.QLineEdit(self.frame_11)
-        self.first_name_entry.setGeometry(QtCore.QRect(20, 120, 161, 21))
+        font.setPointSize(14)
+        self.first_name_entry.setFont(font)
+        self.first_name_entry.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
+        self.first_name_entry.setText("")
         self.first_name_entry.setObjectName("first_name_entry")
-        self.label_38 = QtWidgets.QLabel(self.frame_11)
-        self.label_38.setGeometry(QtCore.QRect(430, 150, 151, 51))
+        self.profile_name_label_5 = QtWidgets.QLabel(self.frame_9)
+        self.profile_name_label_5.setGeometry(QtCore.QRect(40, 20, 181, 31))
         font = QtGui.QFont()
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_38.setFont(font)
-        self.label_38.setObjectName("label_38")
-        self.label_39 = QtWidgets.QLabel(self.frame_11)
-        self.label_39.setGeometry(QtCore.QRect(20, 305, 101, 21))
+        font.setPointSize(17)
+        self.profile_name_label_5.setFont(font)
+        self.profile_name_label_5.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.profile_name_label_5.setObjectName("profile_name_label_5")
+        self.label_55 = QtWidgets.QLabel(self.frame_9)
+        self.label_55.setGeometry(QtCore.QRect(260, 70, 71, 21))
         font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_39.setFont(font)
-        self.label_39.setObjectName("label_39")
-        self.signIn_submit = QtWidgets.QPushButton(self.frame_11)
-        self.signIn_submit.setGeometry(QtCore.QRect(706, 290, 81, 32))
-        self.signIn_submit.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.signIn_submit.setObjectName("signIn_submit")
-        self.last_name_entry = QtWidgets.QLineEdit(self.frame_11)
-        self.last_name_entry.setGeometry(QtCore.QRect(210, 120, 161, 21))
-        self.last_name_entry.setObjectName("last_name_entry")
-        self.label_40 = QtWidgets.QLabel(self.frame_11)
-        self.label_40.setGeometry(QtCore.QRect(20, 250, 101, 21))
+        self.label_55.setFont(font)
+        self.label_55.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_55.setObjectName("label_55")
+        self.label_56 = QtWidgets.QLabel(self.frame_9)
+        self.label_56.setGeometry(QtCore.QRect(40, 160, 71, 21))
         font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_40.setFont(font)
-        self.label_40.setObjectName("label_40")
-        self.phone_code_comboBox = QtWidgets.QComboBox(self.frame_11)
-        self.phone_code_comboBox.setGeometry(QtCore.QRect(18, 265, 161, 41))
+        self.label_56.setFont(font)
+        self.label_56.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_56.setObjectName("label_56")
+        self.label_57 = QtWidgets.QLabel(self.frame_9)
+        self.label_57.setGeometry(QtCore.QRect(40, 250, 71, 21))
+        font = QtGui.QFont()
+        self.label_57.setFont(font)
+        self.label_57.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_57.setObjectName("label_57")
+        self.label_8 = QtWidgets.QLabel(self.frame_9)
+        self.label_8.setGeometry(QtCore.QRect(790, 10, 61, 61))
+        self.label_8.setText("")
+        self.label_8.setPixmap(QtGui.QPixmap("ui/../icons/add-user.png"))
+        self.label_8.setScaledContents(True)
+        self.label_8.setObjectName("label_8")
+        self.label_58 = QtWidgets.QLabel(self.frame_9)
+        self.label_58.setGeometry(QtCore.QRect(40, 340, 101, 21))
+        font = QtGui.QFont()
+        self.label_58.setFont(font)
+        self.label_58.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_58.setObjectName("label_58")
+        self.phone_code_comboBox = QtWidgets.QComboBox(self.frame_9)
+        self.phone_code_comboBox.setGeometry(QtCore.QRect(40, 360, 161, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1909,51 +2786,55 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.phone_code_comboBox.setFont(font)
+        self.phone_code_comboBox.setStyleSheet("QComboBox {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #CCCCCC;\n"
+"    border-radius: 6px;\n"
+"    padding: 5px 10px;\n"
+"    padding-right: 30px; /* space for the custom arrow */\n"
+"    color: #333333;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    width: 24px;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    image: url(icons/down.png);  /* make sure this path is valid */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"    margin-right: 6px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #CCCCCC;\n"
+"    selection-background-color: #007BFF;\n"
+"    selection-color: white;\n"
+"    padding: 4px;\n"
+"}\n"
+"")
         self.phone_code_comboBox.setObjectName("phone_code_comboBox")
         self.phone_code_comboBox.addItem("")
         self.phone_code_comboBox.addItem("")
         self.phone_code_comboBox.addItem("")
         self.phone_code_comboBox.addItem("")
         self.phone_code_comboBox.addItem("")
-        self.label_41 = QtWidgets.QLabel(self.frame_11)
-        self.label_41.setGeometry(QtCore.QRect(20, 150, 101, 21))
+        self.label_59 = QtWidgets.QLabel(self.frame_9)
+        self.label_59.setGeometry(QtCore.QRect(40, 430, 101, 21))
         font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_41.setFont(font)
-        self.label_41.setObjectName("label_41")
-        self.label_42 = QtWidgets.QLabel(self.frame_11)
-        self.label_42.setGeometry(QtCore.QRect(430, 210, 151, 21))
-        font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_42.setFont(font)
-        self.label_42.setObjectName("label_42")
-        self.signIn_message = QtWidgets.QLabel(self.frame_11)
-        self.signIn_message.setGeometry(QtCore.QRect(480, 320, 241, 61))
-        self.signIn_message.setAlignment(QtCore.Qt.AlignCenter)
-        self.signIn_message.setWordWrap(True)
-        self.signIn_message.setObjectName("signIn_message")
-        self.news_page_button = QtWidgets.QPushButton(self.frame_11)
-        self.news_page_button.setGeometry(QtCore.QRect(686, 430, 101, 32))
-        self.news_page_button.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.news_page_button.setObjectName("news_page_button")
-        self.label_44 = QtWidgets.QLabel(self.frame_11)
-        self.label_44.setGeometry(QtCore.QRect(210, 100, 71, 21))
-        font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_44.setFont(font)
-        self.label_44.setObjectName("label_44")
-        self.label_45 = QtWidgets.QLabel(self.frame_11)
-        self.label_45.setGeometry(QtCore.QRect(20, 200, 151, 21))
-        font = QtGui.QFont()
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_45.setFont(font)
-        self.label_45.setObjectName("label_45")
-        self.country_comboBox = QtWidgets.QComboBox(self.frame_11)
-        self.country_comboBox.setGeometry(QtCore.QRect(20, 320, 356, 41))
+        self.label_59.setFont(font)
+        self.label_59.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_59.setObjectName("label_59")
+        self.country_comboBox = QtWidgets.QComboBox(self.frame_9)
+        self.country_comboBox.setGeometry(QtCore.QRect(40, 450, 421, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1962,65 +2843,345 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.country_comboBox.setFont(font)
+        self.country_comboBox.setStyleSheet("QComboBox {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"/* Hide the native drop-down arrow */\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    width: 30px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* Add custom arrow */\n"
+"QComboBox::down-arrow {\n"
+"    image: url(icons/down.png);  /* Make sure this is a valid relative path */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* Optional: style the dropdown popup list */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    selection-background-color: #007BFF;\n"
+"    selection-color: white;\n"
+"    font-size: 14px;\n"
+"    outline: none;\n"
+"}")
         self.country_comboBox.setObjectName("country_comboBox")
         self.country_comboBox.addItem("")
         self.country_comboBox.addItem("")
         self.country_comboBox.addItem("")
         self.country_comboBox.addItem("")
         self.country_comboBox.addItem("")
-        self.create_email_entry = QtWidgets.QLineEdit(self.frame_11)
-        self.create_email_entry.setGeometry(QtCore.QRect(20, 170, 351, 21))
+        self.create_account_submit = QtWidgets.QPushButton(self.frame_9)
+        self.create_account_submit.setGeometry(QtCore.QRect(360, 500, 100, 25))
+        self.create_account_submit.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.create_account_submit.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
+        self.create_account_submit.setObjectName("create_account_submit")
+        self.create_account_message = QtWidgets.QLabel(self.frame_9)
+        self.create_account_message.setGeometry(QtCore.QRect(110, 550, 261, 51))
+        font = QtGui.QFont()
+        self.create_account_message.setFont(font)
+        self.create_account_message.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.create_account_message.setAlignment(QtCore.Qt.AlignCenter)
+        self.create_account_message.setWordWrap(True)
+        self.create_account_message.setObjectName("create_account_message")
+        self.label_60 = QtWidgets.QLabel(self.frame_9)
+        self.label_60.setGeometry(QtCore.QRect(520, 250, 71, 21))
+        font = QtGui.QFont()
+        self.label_60.setFont(font)
+        self.label_60.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_60.setObjectName("label_60")
+        self.label_68 = QtWidgets.QLabel(self.frame_9)
+        self.label_68.setGeometry(QtCore.QRect(520, 340, 71, 21))
+        font = QtGui.QFont()
+        self.label_68.setFont(font)
+        self.label_68.setStyleSheet("QLabel {\n"
+"    color: #555555;\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.label_68.setObjectName("label_68")
+        self.signIn_submit = QtWidgets.QPushButton(self.frame_9)
+        self.signIn_submit.setGeometry(QtCore.QRect(750, 410, 100, 25))
+        self.signIn_submit.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.signIn_submit.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
+        self.signIn_submit.setObjectName("signIn_submit")
+        self.signIn_message = QtWidgets.QLabel(self.frame_9)
+        self.signIn_message.setGeometry(QtCore.QRect(560, 460, 261, 51))
+        font = QtGui.QFont()
+        self.signIn_message.setFont(font)
+        self.signIn_message.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.signIn_message.setAlignment(QtCore.Qt.AlignCenter)
+        self.signIn_message.setWordWrap(True)
+        self.signIn_message.setObjectName("signIn_message")
+        self.profile_name_label_7 = QtWidgets.QLabel(self.frame_9)
+        self.profile_name_label_7.setGeometry(QtCore.QRect(520, 200, 181, 31))
+        font = QtGui.QFont()
+        font.setPointSize(17)
+        self.profile_name_label_7.setFont(font)
+        self.profile_name_label_7.setStyleSheet("QLabel {\n"
+"    margin-bottom: 4px;\n"
+"    letter-spacing: 0.5px;\n"
+"}")
+        self.profile_name_label_7.setObjectName("profile_name_label_7")
+        self.news_page_button = QtWidgets.QPushButton(self.frame_9)
+        self.news_page_button.setGeometry(QtCore.QRect(750, 540, 100, 25))
+        self.news_page_button.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.news_page_button.setStyleSheet("QPushButton {\n"
+"    background-color: #F0F0F0;\n"
+"    border: 1px solid #DADADA;\n"
+"    border-radius: 6px;\n"
+"    padding: 3px 1px;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #E6E6E6;\n"
+"    border: 1px solid #C0C0C0;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #DCDCDC;\n"
+"    border: 1px solid #B0B0B0;\n"
+"}\n"
+"")
+        self.news_page_button.setObjectName("news_page_button")
+        self.last_name_entry = QtWidgets.QLineEdit(self.frame_9)
+        self.last_name_entry.setGeometry(QtCore.QRect(260, 90, 201, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.last_name_entry.setFont(font)
+        self.last_name_entry.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
+        self.last_name_entry.setText("")
+        self.last_name_entry.setObjectName("last_name_entry")
+        self.create_email_entry = QtWidgets.QLineEdit(self.frame_9)
+        self.create_email_entry.setGeometry(QtCore.QRect(40, 180, 421, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.create_email_entry.setFont(font)
+        self.create_email_entry.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
+        self.create_email_entry.setText("")
         self.create_email_entry.setObjectName("create_email_entry")
-        self.create_password_entry = QtWidgets.QLineEdit(self.frame_11)
-        self.create_password_entry.setGeometry(QtCore.QRect(20, 220, 351, 21))
+        self.create_password_entry = QtWidgets.QLineEdit(self.frame_9)
+        self.create_password_entry.setGeometry(QtCore.QRect(40, 270, 421, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.create_password_entry.setFont(font)
+        self.create_password_entry.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
         self.create_password_entry.setText("")
         self.create_password_entry.setEchoMode(QtWidgets.QLineEdit.Password)
         self.create_password_entry.setObjectName("create_password_entry")
-        self.phone_number_entry = QtWidgets.QLineEdit(self.frame_11)
-        self.phone_number_entry.setGeometry(QtCore.QRect(190, 273, 181, 21))
+        self.phone_number_entry = QtWidgets.QLineEdit(self.frame_9)
+        self.phone_number_entry.setGeometry(QtCore.QRect(220, 360, 241, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.phone_number_entry.setFont(font)
+        self.phone_number_entry.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
         self.phone_number_entry.setText("")
-        self.phone_number_entry.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.phone_number_entry.setObjectName("phone_number_entry")
-        self.label = QtWidgets.QLabel(self.frame_11)
-        self.label.setGeometry(QtCore.QRect(380, 0, 40, 40))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("ui/../icons/user.png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
-        self.signIn_email = QtWidgets.QLineEdit(self.frame_11)
-        self.signIn_email.setGeometry(QtCore.QRect(510, 210, 271, 21))
+        self.signIn_email = QtWidgets.QLineEdit(self.frame_9)
+        self.signIn_email.setGeometry(QtCore.QRect(520, 270, 331, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.signIn_email.setFont(font)
+        self.signIn_email.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
+        self.signIn_email.setText("")
         self.signIn_email.setObjectName("signIn_email")
-        self.signIn_password = QtWidgets.QLineEdit(self.frame_11)
-        self.signIn_password.setGeometry(QtCore.QRect(510, 250, 271, 21))
+        self.signIn_password = QtWidgets.QLineEdit(self.frame_9)
+        self.signIn_password.setGeometry(QtCore.QRect(520, 360, 331, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.signIn_password.setFont(font)
+        self.signIn_password.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"")
+        self.signIn_password.setText("")
         self.signIn_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.signIn_password.setObjectName("signIn_password")
-        self.key_label = QtWidgets.QLabel(self.frame_11)
-        self.key_label.setEnabled(False)
-        self.key_label.setGeometry(QtCore.QRect(190, 460, 421, 20))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.key_label.setFont(font)
-        self.key_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.key_label.setObjectName("key_label")
-        self.horizontalLayout_4.addWidget(self.frame_11)
+        self.horizontalLayout_4.addWidget(self.frame_9)
         self.stackedWidget.addWidget(self.registration_page)
-        self.horizontalLayout_7.addWidget(self.stackedWidget)
+        self.verticalLayout_2.addWidget(self.stackedWidget)
+        self.verticalLayout_9.addWidget(self.frame_7)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
+        self.profile_phone_code.setCurrentIndex(1)
         self.articleWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.startup_message.setText(_translate("MainWindow", "A NewsAPI key is required for this application."))
-        self.label_2.setText(_translate("MainWindow", "Available here:"))
-        self.newsAPI_link.setText(_translate("MainWindow", "NewsAPI.org"))
-        self.api_enter_button.setText(_translate("MainWindow", "Enter"))
-        self.key_entry_message.setText(_translate("MainWindow", "Invalid Key"))
+        self.profile_name_label_2.setText(_translate("MainWindow", "A NewsAPI key is required for this application."))
+        self.label_45.setText(_translate("MainWindow", "Available here:"))
         self.api_entry.setPlaceholderText(_translate("MainWindow", "Enter API Key here..."))
+        self.key_entry_message.setText(_translate("MainWindow", "Invalid API Key"))
+        self.api_enter_button.setText(_translate("MainWindow", "Enter"))
+        self.newsAPI_link.setText(_translate("MainWindow", "NewsAPI.org"))
+        self.profile_name_label.setText(_translate("MainWindow", "Full name"))
+        self.profile_email_label.setText(_translate("MainWindow", "some.email@outlook.com"))
+        self.label_44.setText(_translate("MainWindow", "First name:"))
+        self.label_61.setText(_translate("MainWindow", "Last name:"))
+        self.label_62.setText(_translate("MainWindow", "Email:"))
+        self.label_63.setText(_translate("MainWindow", "Country:"))
+        self.profile_country.setCurrentText(_translate("MainWindow", "United States"))
+        self.profile_country.setItemText(0, _translate("MainWindow", "United States"))
+        self.profile_country.setItemText(1, _translate("MainWindow", "United Kingdom"))
+        self.profile_country.setItemText(2, _translate("MainWindow", "India"))
+        self.profile_country.setItemText(3, _translate("MainWindow", "China"))
+        self.profile_country.setItemText(4, _translate("MainWindow", "Germany"))
+        self.label_64.setText(_translate("MainWindow", "Phone number: "))
+        self.profile_phone_code.setCurrentText(_translate("MainWindow", "United Kingdom (+44)"))
+        self.profile_phone_code.setItemText(0, _translate("MainWindow", "United States (+1)", "+1"))
+        self.profile_phone_code.setItemText(1, _translate("MainWindow", "United Kingdom (+44)", "+44"))
+        self.profile_phone_code.setItemText(2, _translate("MainWindow", "India (+91)", "+91"))
+        self.profile_phone_code.setItemText(3, _translate("MainWindow", "China (+86)", "+86"))
+        self.profile_phone_code.setItemText(4, _translate("MainWindow", "Germany (+48)", "+48"))
+        self.profile_edit_button.setText(_translate("MainWindow", "Edit"))
+        self.label_65.setText(_translate("MainWindow", "Password:"))
+        self.label_66.setText(_translate("MainWindow", "API KEY:"))
+        self.profile_name_label_8.setText(_translate("MainWindow", "My email address:"))
+        self.first_email_name.setText(_translate("MainWindow", "some.email@outlook.com"))
+        self.second_email_name.setText(_translate("MainWindow", "some.email@outlook.com"))
+        self.first_email_description.setText(_translate("MainWindow", "Email:"))
+        self.second_email_description.setText(_translate("MainWindow", "Email:"))
+        self.profile_add_email.setText(_translate("MainWindow", "+ Email Address"))
+        self.profile_news_button.setText(_translate("MainWindow", "News Page"))
         self.latest_news_header.setText(_translate("MainWindow", "latest news"))
         self.signIn_button.setText(_translate("MainWindow", "Sign in"))
         self.searchBar.setPlaceholderText(_translate("MainWindow", "Search..."))
@@ -2158,34 +3319,33 @@ class Ui_MainWindow(object):
         self.text_label.setText(_translate("MainWindow", "You have 0/6 saved articles."))
         self.results_label.setText(_translate("MainWindow", "Results:"))
         self.refresh_button.setText(_translate("MainWindow", "Refresh"))
-        self.create_account_message.setText(_translate("MainWindow", "Account creation error message"))
-        self.create_account_submit.setText(_translate("MainWindow", "Submit"))
-        self.label_34.setText(_translate("MainWindow", "Password: "))
-        self.label_36.setText(_translate("MainWindow", "Create account"))
-        self.label_37.setText(_translate("MainWindow", "First name:"))
-        self.label_38.setText(_translate("MainWindow", "Sign in"))
-        self.label_39.setText(_translate("MainWindow", "Country:"))
-        self.signIn_submit.setText(_translate("MainWindow", "Submit"))
-        self.label_40.setText(_translate("MainWindow", "Phone number: "))
+        self.label_54.setText(_translate("MainWindow", "First name:"))
+        self.profile_name_label_5.setText(_translate("MainWindow", "Create Account"))
+        self.label_55.setText(_translate("MainWindow", "Last name:"))
+        self.label_56.setText(_translate("MainWindow", "Email:"))
+        self.label_57.setText(_translate("MainWindow", "Password:"))
+        self.label_58.setText(_translate("MainWindow", "Phone number: "))
         self.phone_code_comboBox.setCurrentText(_translate("MainWindow", "United States (+1)"))
         self.phone_code_comboBox.setItemText(0, _translate("MainWindow", "United States (+1)", "+1"))
         self.phone_code_comboBox.setItemText(1, _translate("MainWindow", "United Kingdom (+44)", "+44"))
         self.phone_code_comboBox.setItemText(2, _translate("MainWindow", "India (+91)", "+91"))
         self.phone_code_comboBox.setItemText(3, _translate("MainWindow", "China (+86)", "+86"))
         self.phone_code_comboBox.setItemText(4, _translate("MainWindow", "Germany (+48)", "+48"))
-        self.label_41.setText(_translate("MainWindow", "Email:"))
-        self.label_42.setText(_translate("MainWindow", "Email:"))
-        self.signIn_message.setText(_translate("MainWindow", "Sign in error message"))
+        self.label_59.setText(_translate("MainWindow", "Country:"))
+        self.country_comboBox.setCurrentText(_translate("MainWindow", "United States (+1)"))
+        self.country_comboBox.setItemText(0, _translate("MainWindow", "United States (+1)", "+1"))
+        self.country_comboBox.setItemText(1, _translate("MainWindow", "United Kingdom (+44)", "+44"))
+        self.country_comboBox.setItemText(2, _translate("MainWindow", "India (+91)", "+91"))
+        self.country_comboBox.setItemText(3, _translate("MainWindow", "China (+86)", "+86"))
+        self.country_comboBox.setItemText(4, _translate("MainWindow", "Germany (+48)", "+48"))
+        self.create_account_submit.setText(_translate("MainWindow", "Submit"))
+        self.create_account_message.setText(_translate("MainWindow", "Account creation message"))
+        self.label_60.setText(_translate("MainWindow", "Email:"))
+        self.label_68.setText(_translate("MainWindow", "Password:"))
+        self.signIn_submit.setText(_translate("MainWindow", "Submit"))
+        self.signIn_message.setText(_translate("MainWindow", "Sign in creation message"))
+        self.profile_name_label_7.setText(_translate("MainWindow", "Sign In"))
         self.news_page_button.setText(_translate("MainWindow", "News Page"))
-        self.label_44.setText(_translate("MainWindow", "Last name:"))
-        self.label_45.setText(_translate("MainWindow", "Password: "))
-        self.country_comboBox.setCurrentText(_translate("MainWindow", "United States"))
-        self.country_comboBox.setItemText(0, _translate("MainWindow", "United States"))
-        self.country_comboBox.setItemText(1, _translate("MainWindow", "United Kingdom"))
-        self.country_comboBox.setItemText(2, _translate("MainWindow", "India"))
-        self.country_comboBox.setItemText(3, _translate("MainWindow", "China"))
-        self.country_comboBox.setItemText(4, _translate("MainWindow", "Germany"))
-        self.key_label.setText(_translate("MainWindow", "API key:"))
 
 
 if __name__ == "__main__":
