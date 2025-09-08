@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(965, 685)
+        MainWindow.resize(941, 661)
         MainWindow.setFocusPolicy(QtCore.Qt.NoFocus)
         MainWindow.setStyleSheet("background-color: #f5f1e9;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -144,6 +144,7 @@ class Ui_MainWindow(object):
         self.profile_page = QtWidgets.QWidget()
         self.profile_page.setObjectName("profile_page")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.profile_page)
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.frame_2 = QtWidgets.QFrame(self.profile_page)
         self.frame_2.setMinimumSize(QtCore.QSize(891, 611))
@@ -391,7 +392,7 @@ class Ui_MainWindow(object):
         self.profile_email.setText("")
         self.profile_email.setObjectName("profile_email")
         self.profile_edit_button = QtWidgets.QPushButton(self.frame_2)
-        self.profile_edit_button.setGeometry(QtCore.QRect(770, 40, 89, 32))
+        self.profile_edit_button.setGeometry(QtCore.QRect(760, 40, 89, 32))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -536,7 +537,7 @@ class Ui_MainWindow(object):
         self.first_email_icon.setScaledContents(True)
         self.first_email_icon.setObjectName("first_email_icon")
         self.first_email_name = QtWidgets.QLabel(self.frame_2)
-        self.first_email_name.setGeometry(QtCore.QRect(90, 430, 181, 21))
+        self.first_email_name.setGeometry(QtCore.QRect(90, 430, 281, 21))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -554,7 +555,7 @@ class Ui_MainWindow(object):
         self.second_email_icon.setScaledContents(True)
         self.second_email_icon.setObjectName("second_email_icon")
         self.second_email_name = QtWidgets.QLabel(self.frame_2)
-        self.second_email_name.setGeometry(QtCore.QRect(90, 490, 181, 21))
+        self.second_email_name.setGeometry(QtCore.QRect(90, 490, 281, 21))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -566,7 +567,7 @@ class Ui_MainWindow(object):
 "}")
         self.second_email_name.setObjectName("second_email_name")
         self.first_email_description = QtWidgets.QLabel(self.frame_2)
-        self.first_email_description.setGeometry(QtCore.QRect(90, 450, 71, 21))
+        self.first_email_description.setGeometry(QtCore.QRect(90, 450, 291, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.first_email_description.setFont(font)
@@ -577,7 +578,7 @@ class Ui_MainWindow(object):
 "}")
         self.first_email_description.setObjectName("first_email_description")
         self.second_email_description = QtWidgets.QLabel(self.frame_2)
-        self.second_email_description.setGeometry(QtCore.QRect(90, 510, 71, 21))
+        self.second_email_description.setGeometry(QtCore.QRect(90, 510, 281, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.second_email_description.setFont(font)
@@ -587,18 +588,19 @@ class Ui_MainWindow(object):
 "    letter-spacing: 0.5px;\n"
 "}")
         self.second_email_description.setObjectName("second_email_description")
-        self.profile_add_email = QtWidgets.QPushButton(self.frame_2)
-        self.profile_add_email.setGeometry(QtCore.QRect(270, 550, 151, 31))
+        self.add_email_button = QtWidgets.QPushButton(self.frame_2)
+        self.add_email_button.setEnabled(False)
+        self.add_email_button.setGeometry(QtCore.QRect(270, 550, 151, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.profile_add_email.sizePolicy().hasHeightForWidth())
-        self.profile_add_email.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.add_email_button.sizePolicy().hasHeightForWidth())
+        self.add_email_button.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(14)
-        self.profile_add_email.setFont(font)
-        self.profile_add_email.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.profile_add_email.setStyleSheet("QPushButton {\n"
+        self.add_email_button.setFont(font)
+        self.add_email_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.add_email_button.setStyleSheet("QPushButton {\n"
 "    background-color: #79c3ed;\n"
 "    color: white;\n"
 "    border: none;\n"
@@ -606,29 +608,11 @@ class Ui_MainWindow(object):
 "    padding: 8px 16px;\n"
 "}\n"
 "\n"
-"QPushButton:hover {\n"
+"QPushButton:hover, QPushButton::pressed, QPushButton::disabled {\n"
 "    background-color: #98ceed;\n"
 "}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #98ceed; /* #8cc9ed*/\n"
-"}\n"
 "")
-        self.profile_add_email.setObjectName("profile_add_email")
-        self.delete_first_email = QtWidgets.QPushButton(self.frame_2)
-        self.delete_first_email.setGeometry(QtCore.QRect(390, 425, 25, 25))
-        self.delete_first_email.setMinimumSize(QtCore.QSize(25, 25))
-        self.delete_first_email.setMaximumSize(QtCore.QSize(25, 25))
-        self.delete_first_email.setAutoFillBackground(False)
-        self.delete_first_email.setStyleSheet("    border: none;\n"
-"    background: transparent;")
-        self.delete_first_email.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("ui/../icons/delete.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.delete_first_email.setIcon(icon)
-        self.delete_first_email.setIconSize(QtCore.QSize(25, 25))
-        self.delete_first_email.setCheckable(True)
-        self.delete_first_email.setObjectName("delete_first_email")
+        self.add_email_button.setObjectName("add_email_button")
         self.delete_second_email = QtWidgets.QPushButton(self.frame_2)
         self.delete_second_email.setGeometry(QtCore.QRect(390, 490, 25, 25))
         self.delete_second_email.setMinimumSize(QtCore.QSize(25, 25))
@@ -637,6 +621,8 @@ class Ui_MainWindow(object):
         self.delete_second_email.setStyleSheet("    border: none;\n"
 "    background: transparent;")
         self.delete_second_email.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("ui/../icons/delete.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.delete_second_email.setIcon(icon)
         self.delete_second_email.setIconSize(QtCore.QSize(25, 25))
         self.delete_second_email.setCheckable(True)
@@ -666,6 +652,42 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.profile_news_button.setObjectName("profile_news_button")
+        self.profile_second_email = QtWidgets.QLineEdit(self.frame_2)
+        self.profile_second_email.setEnabled(False)
+        self.profile_second_email.setGeometry(QtCore.QRect(40, 550, 211, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.profile_second_email.setFont(font)
+        self.profile_second_email.setStyleSheet("QLineEdit {\n"
+"    background-color: #F5F5F5;\n"
+"    border: 1px solid #E0E0E0;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px 12px;\n"
+"    color: #333;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #007BFF;\n"
+"    background-color: #FFFFFF;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f2f2f2;\n"
+"}")
+        self.profile_second_email.setText("")
+        self.profile_second_email.setObjectName("profile_second_email")
+        self.add_email_message = QtWidgets.QLabel(self.frame_2)
+        self.add_email_message.setGeometry(QtCore.QRect(40, 490, 381, 41))
+        self.add_email_message.setAlignment(QtCore.Qt.AlignCenter)
+        self.add_email_message.setObjectName("add_email_message")
+        self.details_entry_message = QtWidgets.QLabel(self.frame_2)
+        self.details_entry_message.setGeometry(QtCore.QRect(500, 550, 221, 41))
+        self.details_entry_message.setText("")
+        self.details_entry_message.setAlignment(QtCore.Qt.AlignCenter)
+        self.details_entry_message.setWordWrap(True)
+        self.details_entry_message.setObjectName("details_entry_message")
         self.horizontalLayout_5.addWidget(self.frame_2)
         self.stackedWidget.addWidget(self.profile_page)
         self.news_page = QtWidgets.QWidget()
@@ -935,7 +957,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 298, 1594))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 290, 1594))
         self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
@@ -1342,7 +1364,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 299, 1594))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 291, 1594))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -1739,7 +1761,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollArea_3.setObjectName("scrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 298, 1594))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 290, 1594))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -1755,6 +1777,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_44.setContentsMargins(5, 5, 5, 5)
         self.verticalLayout_44.setObjectName("verticalLayout_44")
         self.articleTitle_label_11 = QtWidgets.QLabel(self.articleBox_11)
+        self.articleTitle_label_11.setEnabled(True)
         font = QtGui.QFont()
         font.setPointSize(19)
         font.setBold(True)
@@ -2144,7 +2167,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollArea_4.setObjectName("scrollArea_4")
         self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 915, 782))
+        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 516, 932))
         self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
         self.gridLayout = QtWidgets.QGridLayout(self.scrollAreaWidgetContents_4)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -3140,7 +3163,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(2)
-        self.profile_phone_code.setCurrentIndex(1)
+        self.profile_phone_code.setCurrentIndex(0)
         self.articleWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -3166,7 +3189,7 @@ class Ui_MainWindow(object):
         self.profile_country.setItemText(3, _translate("MainWindow", "China"))
         self.profile_country.setItemText(4, _translate("MainWindow", "Germany"))
         self.label_64.setText(_translate("MainWindow", "Phone number: "))
-        self.profile_phone_code.setCurrentText(_translate("MainWindow", "United Kingdom (+44)"))
+        self.profile_phone_code.setCurrentText(_translate("MainWindow", "United States (+1)"))
         self.profile_phone_code.setItemText(0, _translate("MainWindow", "United States (+1)", "+1"))
         self.profile_phone_code.setItemText(1, _translate("MainWindow", "United Kingdom (+44)", "+44"))
         self.profile_phone_code.setItemText(2, _translate("MainWindow", "India (+91)", "+91"))
@@ -3178,10 +3201,11 @@ class Ui_MainWindow(object):
         self.profile_name_label_8.setText(_translate("MainWindow", "My email address:"))
         self.first_email_name.setText(_translate("MainWindow", "some.email@outlook.com"))
         self.second_email_name.setText(_translate("MainWindow", "some.email@outlook.com"))
-        self.first_email_description.setText(_translate("MainWindow", "Email:"))
-        self.second_email_description.setText(_translate("MainWindow", "Email:"))
-        self.profile_add_email.setText(_translate("MainWindow", "+ Email Address"))
+        self.first_email_description.setText(_translate("MainWindow", "Main email"))
+        self.second_email_description.setText(_translate("MainWindow", "Secondary email"))
+        self.add_email_button.setText(_translate("MainWindow", "+ Email Address"))
         self.profile_news_button.setText(_translate("MainWindow", "News Page"))
+        self.add_email_message.setText(_translate("MainWindow", "TextLabel"))
         self.latest_news_header.setText(_translate("MainWindow", "latest news"))
         self.signIn_button.setText(_translate("MainWindow", "Sign in"))
         self.searchBar.setPlaceholderText(_translate("MainWindow", "Search..."))
@@ -3332,12 +3356,12 @@ class Ui_MainWindow(object):
         self.phone_code_comboBox.setItemText(3, _translate("MainWindow", "China (+86)", "+86"))
         self.phone_code_comboBox.setItemText(4, _translate("MainWindow", "Germany (+48)", "+48"))
         self.label_59.setText(_translate("MainWindow", "Country:"))
-        self.country_comboBox.setCurrentText(_translate("MainWindow", "United States (+1)"))
-        self.country_comboBox.setItemText(0, _translate("MainWindow", "United States (+1)", "+1"))
-        self.country_comboBox.setItemText(1, _translate("MainWindow", "United Kingdom (+44)", "+44"))
-        self.country_comboBox.setItemText(2, _translate("MainWindow", "India (+91)", "+91"))
-        self.country_comboBox.setItemText(3, _translate("MainWindow", "China (+86)", "+86"))
-        self.country_comboBox.setItemText(4, _translate("MainWindow", "Germany (+48)", "+48"))
+        self.country_comboBox.setCurrentText(_translate("MainWindow", "United States"))
+        self.country_comboBox.setItemText(0, _translate("MainWindow", "United States", "+1"))
+        self.country_comboBox.setItemText(1, _translate("MainWindow", "United Kingdom", "+44"))
+        self.country_comboBox.setItemText(2, _translate("MainWindow", "India", "+91"))
+        self.country_comboBox.setItemText(3, _translate("MainWindow", "China", "+86"))
+        self.country_comboBox.setItemText(4, _translate("MainWindow", "Germany", "+48"))
         self.create_account_submit.setText(_translate("MainWindow", "Submit"))
         self.create_account_message.setText(_translate("MainWindow", "Account creation message"))
         self.label_60.setText(_translate("MainWindow", "Email:"))

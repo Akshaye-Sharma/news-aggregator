@@ -10,8 +10,10 @@ def init_db():
         first_name TEXT NOT NULL,
         last_name TEXT NOT NULL,
         email TEXT UNIQUE NOT NULL,
+        second_email TEXT,
         password TEXT NOT NULL,
-        phone TEXT,
+        phone_number TEXT,
+        phone_code TEXT,
         country TEXT
     )
     """)

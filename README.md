@@ -49,8 +49,9 @@ python3 main.py
 ├── main.py               # Start the application
 ├── views/
 │   └── main_window.py    # Window logic handler
-│   └── sign_in.py    # Window logic handler
-│   └── key_entry.py    # Window logic handler
+│   └── sign_in.py    
+│   └── key_entry.py      # Key entry start up handler
+│   └── profile.py        
 ├── api/
 │   └── api_params.py    
 │   └── api_request.py    
@@ -60,7 +61,7 @@ python3 main.py
 ├── icons/                # Images used
 │   └── speaker.png
 │   └── user.png
-│   └── key.png
+│   └── ...
 ├── config_manager.py
 ├── load_db.py
 ├── .gitignore

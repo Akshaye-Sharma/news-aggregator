@@ -9,28 +9,36 @@ from load_db import save_article, get_saved_articles, remove_saved_article, is_a
 from functools import partial
 import random as r
 
+# Class for the main GUI handling
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     MAX_NEWS_ARTICLES = 15
     MAX_SAVED_ARTICLES = 6
 
+    # TODO: make a separate class for whenever data is inserted into the database
+    # and for credential checking
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        
+        # Initialise starting variables
         self.signedIn = False
         self.user_id = None
+        self.email = None
         self.currentTab = "Top US"
-
-        self.sign_in_page = SignInPage(self)
-        self.key_entry_page = KeyEntryPage(self)
-        self.user_profile_page = ProfilePage(self)
 
         self.news_service = None
         self.articles = []
         self.saved_articles = []
 
+        # Setup pages
+        self.sign_in_page = SignInPage(self)
+        self.key_entry_page = KeyEntryPage(self)
+        self.user_profile_page = ProfilePage(self)
+
         self.createButtons()
         self.startUp()
-
+    # Check if api key is entered
     def startUp(self):
         config = load_config()
         if is_first_run(config) or not config.get("api_key"):
@@ -71,6 +79,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.load_articles(self.currentTab)
 
     def showProfilePage(self):
+        self.user_profile_page.updateData()
         self.stackedWidget.setCurrentWidget(self.profile_page)
 
     def load_articles(self, topic):
@@ -79,7 +88,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.saved_button.setEnabled(True)
 
         # Fetch articles from API
-        self.articles, self.results, _ = self.news_service.fetch_articles(topic)
+        self.articles, self.results = self.news_service.fetch_articles(topic)
 
         # Enable/disable tab buttons
         self.topUS_button.setEnabled(topic != "Top US")
@@ -255,7 +264,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.tesla_button.setEnabled(True)
 
         try:    
-            self.articles, self.results, _ = self.news_service.fetch_articles(keyword)
+            self.articles, self.results= self.news_service.fetch_articles(keyword)
         except Exception as e:
             # handle errors
             print("Search failed:", e)

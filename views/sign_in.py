@@ -11,15 +11,15 @@ class SignInPage:
         self.last_name = self.main_window.last_name_entry.text()
         self.email = self.main_window.create_email_entry.text()
         self.password = self.main_window.create_password_entry.text()
-        self.country_code = self.main_window.phone_code_comboBox.currentText()
-        self.country_code = self.country_code[self.country_code.find("("):]
-        self.phone = self.main_window.phone_number_entry.text()
+        self.phone_code = self.main_window.phone_code_comboBox.currentText()
+        self.phone_code = self.phone_code[self.phone_code.find("("):]
+        self.phone_number = self.main_window.phone_number_entry.text()
         self.country = self.main_window.country_comboBox.currentText()
         
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
 
-        cursor.execute("SELECT email FROM users WHERE email = ?", (self.email,))
+        cursor.execute("SELECT email FROM users WHERE email = ? or second_email = ?", (self.email, self.email))
         result = cursor.fetchone()
 
         conn.commit()
@@ -33,7 +33,7 @@ class SignInPage:
             self.main_window.create_account_message.setText("Last name must not be empty")
             self.main_window.create_account_message.show()
             return
-        if not self.email or "@" not in self.email or "." not in self.email:
+        if not self.email or "@" not in self.email or "." not in self.email or len(self.email) < 4:
             self.main_window.create_account_message.setText("Please enter a valid email")
             self.main_window.create_account_message.show()
             return
@@ -53,7 +53,7 @@ class SignInPage:
             self.main_window.create_account_message.setText("Password must not contain your name")
             self.main_window.create_account_message.show()
             return            
-        if not self.phone.isdigit() or 11 < len(self.phone) or len(self.phone) < 6:
+        if not self.phone_number.isdigit() or 11 < len(self.phone_number) or len(self.phone_number) < 6:
             self.main_window.create_account_message.setText("Please enter a valid phone number")
             self.main_window.create_account_message.show()
             return
@@ -61,8 +61,7 @@ class SignInPage:
             self.main_window.create_account_message.setText("Please select a country")
             self.main_window.create_account_message.show()
             return
-        
-        self.phone_number = f"{self.country_code} {self.phone}"
+    
         self.main_window.name_label.setText(self.first_name)
 
         self.main_window.create_account_message.setText("Account creation successful!")
@@ -81,9 +80,9 @@ class SignInPage:
         cursor = conn.cursor()
         
         cursor.execute("""
-        INSERT INTO users (first_name, last_name, email, password, phone, country)
-        VALUES (?, ?, ?, ?, ?, ?)
-        """, (self.first_name, self.last_name, self.email, self.hashed_password_str, self.phone_number, self.country))
+        INSERT INTO users (first_name, last_name, email, password, phone_number, phone_code, country)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (self.first_name, self.last_name, self.email, self.hashed_password_str, self.phone_number, self.phone_code, self.country))
         
         conn.commit()
         conn.close()
@@ -104,23 +103,25 @@ class SignInPage:
             conn.close()
             return
 
-        user_id, _, stored_hash, first_name = user
+        user_id, email, stored_hash, first_name = user
         stored_hash = stored_hash.encode('utf-8')
 
         if bcrypt.checkpw(password.encode('utf-8'), stored_hash):
-            self.main_window.signIn_message.setText("Login Successful!")
-            self.main_window.signIn_submit.setEnabled(False)
-            self.main_window.signIn_button.setEnabled(False)
-            self.main_window.profile_button.setEnabled(True)
             self.main_window.signedIn = True
             self.main_window.user_id = user_id
+            self.main_window.email = email
+            
+            self.main_window.signIn_message.setText("Login Successful!")
+            self.main_window.signIn_submit.setEnabled(False)
+
+            self.main_window.signIn_button.setEnabled(False)
+            self.main_window.profile_button.setEnabled(True)
             self.main_window.name_label.setText(first_name)
         else:
             self.main_window.signIn_message.setText("Login Failed")
 
         self.main_window.signIn_message.show()
         conn.close()
-
 
     def buttons(self):
         self.main_window.create_account_submit.clicked.connect(self.account_creation)
@@ -129,6 +130,5 @@ class SignInPage:
         # Hiding message labels
         self.main_window.create_account_message.hide()
         self.main_window.signIn_message.hide()
-    
 
         self.main_window.news_page_button.clicked.connect(self.main_window.showNewsPage)

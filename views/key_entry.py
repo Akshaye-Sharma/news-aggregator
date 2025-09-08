@@ -1,4 +1,4 @@
-from config_manager import load_config, is_first_run, save_config
+from config_manager import load_config, save_config
 from api.api_params import Api_params
 from api.api_request import Api_request
 
@@ -21,7 +21,7 @@ class KeyEntryPage:
             return
 
         if self.checkValidKey(api_key):
-            # Save key + mark as not first run
+            # Saving valid key
             config = load_config()
             config["api_key"] = api_key
             config["first_run"] = False
@@ -31,13 +31,12 @@ class KeyEntryPage:
             self.main_window.stackedWidget.setCurrentWidget(self.main_window.news_page)
             self.main_window.news_service = Api_params()
             self.main_window.load_articles("Top US")
-            self.main_window.key_label.setText("Api key:"+ api_key)
         else:
             self.main_window.key_entry_message.setText("Invalid API Key")
             self.main_window.key_entry_message.show()
     
     def checkValidKey(self, api_key: str) -> bool:
-        """Make a quick test request to validate API key"""
+        # Make a quick test request to validate API key
         try:
             url = "https://newsapi.org/v2/top-headlines"
             params = {"country": "us", "category": "business", "apiKey": api_key}
