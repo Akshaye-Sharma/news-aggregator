@@ -2,7 +2,7 @@
 
 A desktop application built using `PyQt` that fetches and displays the latest news articles from [NewsAPI.org](newsapi.org).
 
-The app lets you browse headlines from different sources and topics such as **Top US News**, **Tesla**, **Apple**, **Wall Street Journal**. Enter your news api key once to use this app.
+The app lets you browse headlines from different sources and topics such as **Top US News**, **Tesla**, **Apple**, **Wall Street Journal**. You can save articles to your account for later reading, update your profile information, and enjoy a clean, responsive interface designed with Qt Designer. Enter your news api key once to use this app.
 
 ## Features
 
@@ -12,6 +12,10 @@ The app lets you browse headlines from different sources and topics such as **To
 * Save and unsave up to 6 articles per account for quick access later.
 * Clean `PyQt5` interface designed with `Qt designer`.
 * Links to source websites for full articles.
+
+## Demo
+
+![App preview](media/preview.gif)
 
 ## Requirements
 
