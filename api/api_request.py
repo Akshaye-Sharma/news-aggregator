@@ -48,8 +48,11 @@ class Api_request:
         text = re.sub(r"<[^>]+>", "", text)
         # Replace escaped newlines \r\n with spaces
         text = text.replace("\r", " ").replace("\n", " ")
+        # Remove trailing "[+1234 chars]" markers
+        text = re.sub(r"\[\+\d+\schars\]$", "", text)
         # Strip extra whitespace
         return text.strip()
+
 
     # Format time displayed on articles
     def convert_time(self):

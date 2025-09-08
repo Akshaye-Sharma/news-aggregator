@@ -1585,8 +1585,7 @@ QPushButton:disabled {
                 <property name="icon">
                  <iconset>
                   <normaloff>../icons/profile.png</normaloff>
-                  <disabledoff>../icons/user-2.png</disabledoff>
-                  <disabledon>../icons/user-2.png</disabledon>../icons/profile.png</iconset>
+                  <disabledoff>../icons/userIcon2.png</disabledoff>../icons/profile.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1708,7 +1707,7 @@ QPushButton:hover {
     border: 1px solid #C0C0C0;
 }
 
-QPushButton:pressed {
+QPushButton:pressed, QPushButton::disabled {
     background-color: #DCDCDC;
     border: 1px solid #B0B0B0;
 }
@@ -1736,6 +1735,7 @@ QPushButton:pressed {
     border: 1px solid #DADADA;
     border-radius: 6px;
     padding: 3px 1px;
+
     color: #333;
 }
 
@@ -1744,7 +1744,7 @@ QPushButton:hover {
     border: 1px solid #C0C0C0;
 }
 
-QPushButton:pressed {
+QPushButton:pressed, QPushButton::disabled {
     background-color: #DCDCDC;
     border: 1px solid #B0B0B0;
 }
@@ -1775,6 +1775,7 @@ QPushButton:pressed {
     border: 1px solid #DADADA;
     border-radius: 6px;
     padding: 3px 1px;
+
     color: #333;
 }
 
@@ -1783,7 +1784,7 @@ QPushButton:hover {
     border: 1px solid #C0C0C0;
 }
 
-QPushButton:pressed {
+QPushButton:pressed, QPushButton::disabled {
     background-color: #DCDCDC;
     border: 1px solid #B0B0B0;
 }
@@ -1811,6 +1812,7 @@ QPushButton:pressed {
     border: 1px solid #DADADA;
     border-radius: 6px;
     padding: 3px 1px;
+
     color: #333;
 }
 
@@ -1819,7 +1821,7 @@ QPushButton:hover {
     border: 1px solid #C0C0C0;
 }
 
-QPushButton:pressed {
+QPushButton:pressed, QPushButton::disabled {
     background-color: #DCDCDC;
     border: 1px solid #B0B0B0;
 }
@@ -1844,6 +1846,7 @@ QPushButton:pressed {
     border: 1px solid #DADADA;
     border-radius: 6px;
     padding: 3px 1px;
+
     color: #333;
 }
 
@@ -1852,7 +1855,7 @@ QPushButton:hover {
     border: 1px solid #C0C0C0;
 }
 
-QPushButton:pressed {
+QPushButton:pressed, QPushButton::disabled {
     background-color: #DCDCDC;
     border: 1px solid #B0B0B0;
 }
@@ -1927,7 +1930,7 @@ QPushButton:pressed {
                           <x>0</x>
                           <y>0</y>
                           <width>290</width>
-                          <height>1594</height>
+                          <height>1584</height>
                          </rect>
                         </property>
                         <property name="styleSheet">
@@ -2928,7 +2931,7 @@ QPushButton:pressed {
                           <x>0</x>
                           <y>0</y>
                           <width>291</width>
-                          <height>1594</height>
+                          <height>1584</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -3914,7 +3917,7 @@ QPushButton:pressed {
                           <x>0</x>
                           <y>0</y>
                           <width>290</width>
-                          <height>1594</height>
+                          <height>1584</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_6">

@@ -770,8 +770,7 @@ class Ui_MainWindow(object):
         self.profile_button.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("ui/../icons/profile.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon1.addPixmap(QtGui.QPixmap("ui/../icons/user-2.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
-        icon1.addPixmap(QtGui.QPixmap("ui/../icons/user-2.png"), QtGui.QIcon.Disabled, QtGui.QIcon.On)
+        icon1.addPixmap(QtGui.QPixmap("ui/../icons/userIcon2.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
         self.profile_button.setIcon(icon1)
         self.profile_button.setIconSize(QtCore.QSize(35, 64))
         self.profile_button.setCheckable(True)
@@ -833,7 +832,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #C0C0C0;\n"
 "}\n"
 "\n"
-"QPushButton:pressed {\n"
+"QPushButton:pressed, QPushButton::disabled {\n"
 "    background-color: #DCDCDC;\n"
 "    border: 1px solid #B0B0B0;\n"
 "}\n"
@@ -848,6 +847,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #DADADA;\n"
 "    border-radius: 6px;\n"
 "    padding: 3px 1px;\n"
+"\n"
 "    color: #333;\n"
 "}\n"
 "\n"
@@ -856,7 +856,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #C0C0C0;\n"
 "}\n"
 "\n"
-"QPushButton:pressed {\n"
+"QPushButton:pressed, QPushButton::disabled {\n"
 "    background-color: #DCDCDC;\n"
 "    border: 1px solid #B0B0B0;\n"
 "}\n"
@@ -872,6 +872,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #DADADA;\n"
 "    border-radius: 6px;\n"
 "    padding: 3px 1px;\n"
+"\n"
 "    color: #333;\n"
 "}\n"
 "\n"
@@ -880,7 +881,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #C0C0C0;\n"
 "}\n"
 "\n"
-"QPushButton:pressed {\n"
+"QPushButton:pressed, QPushButton::disabled {\n"
 "    background-color: #DCDCDC;\n"
 "    border: 1px solid #B0B0B0;\n"
 "}\n"
@@ -895,6 +896,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #DADADA;\n"
 "    border-radius: 6px;\n"
 "    padding: 3px 1px;\n"
+"\n"
 "    color: #333;\n"
 "}\n"
 "\n"
@@ -903,7 +905,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #C0C0C0;\n"
 "}\n"
 "\n"
-"QPushButton:pressed {\n"
+"QPushButton:pressed, QPushButton::disabled {\n"
 "    background-color: #DCDCDC;\n"
 "    border: 1px solid #B0B0B0;\n"
 "}\n"
@@ -917,6 +919,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #DADADA;\n"
 "    border-radius: 6px;\n"
 "    padding: 3px 1px;\n"
+"\n"
 "    color: #333;\n"
 "}\n"
 "\n"
@@ -925,7 +928,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #C0C0C0;\n"
 "}\n"
 "\n"
-"QPushButton:pressed {\n"
+"QPushButton:pressed, QPushButton::disabled {\n"
 "    background-color: #DCDCDC;\n"
 "    border: 1px solid #B0B0B0;\n"
 "}\n"
@@ -957,7 +960,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 290, 1594))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 290, 1584))
         self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
@@ -1364,7 +1367,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 291, 1594))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 291, 1584))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -1761,7 +1764,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollArea_3.setObjectName("scrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 290, 1594))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 290, 1584))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
